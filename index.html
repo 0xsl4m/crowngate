@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
   <header>
     <div class="container nav">
@@ -31,7 +30,6 @@
         <button class="btn btn-gold" onclick="openModal('Sign Up', 'Sign Up coming soon')" data-lang-en="Sign Up" data-lang-ar="التسجيل">Sign Up</button>
       </div>
     </div>
-
   </header>
   <main id="top" class="hero">
     <div class="container">
@@ -54,255 +52,132 @@
               <option>Sharm</option>
             </select>
           </label>
-
           <label class="input" aria-label="Service">
-
             <select id="service">
-
               <option value="" selected disabled data-lang-en="Service" data-lang-ar="الخدمة">Service</option>
-
               <option value="airport-pickup" data-lang-en="Airport Pickup" data-lang-ar="استقبال مطار">Airport Pickup</option>
-
               <option value="car-rental" data-lang-en="Car Rental" data-lang-ar="تأجير سيارات">Car Rental</option>
-
               <option value="hotels" data-lang-en="Hotels" data-lang-ar="فنادق">Hotels</option>
-
               <option value="chalets" data-lang-en="Chalets" data-lang-ar="شاليهات">Chalets</option>
-
               <option value="golf-cart" data-lang-en="Golf Cart" data-lang-ar="سيارات جولف">Golf Cart</option>
-
               <option value="guided-tours" data-lang-en="Guided Tours" data-lang-ar="جولات سياحية">Guided Tours</option>
-
             </select>
-
           </label>
-
           <button class="btn btn-gold search-btn" onclick="performSearch()" data-lang-en="Search" data-lang-ar="بحث">
-
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-
             Search
-
           </button>
-
           <button class="btn btn-remove-filter" onclick="resetSearch()" data-lang-en="Remove Filter" data-lang-ar="إزالة الفلتر">Remove Filter</button>
-
         </div>
-
       </div>
-
     </div>
-
     <div class="scroll-cue" aria-hidden="true">&#9660;</div>
-
   </main>
-
   <section id="services">
-
     <div class="container">
-
       <div class="section-head">
-
         <div class="eyebrow" data-lang-en="Our Services" data-lang-ar="خدماتنا">Our Services</div>
-
         <h2 class="section-title" data-lang-en="Experience luxury with our premium concierge offerings" data-lang-ar="استمتع بالرفاهية مع خدماتنا الاستثنائية">Experience luxury with our premium concierge offerings</h2>
-
         <p class="section-sub" data-lang-en="We curate seamless, end-to-end arrangements so you can focus on the journey, not the logistics." data-lang-ar="نحن نقدم ترتيبات سلسة وشاملة لتتمكن من التركيز على رحلتك، وليس على التفاصيل.">We curate seamless, end-to-end arrangements so you can focus on the journey, not the logistics.</p>
-
       </div>
-
       <div class="cards">
-
         <article class="card" data-service="airport-pickup">
-
           <img src="images/services/airport.jpg" alt="Private airport pickup">
-
           <div class="card-body">
-
             <h3 data-lang-en="Airport Pickup" data-lang-ar="استقبال من المطار">Airport Pickup</h3>
-
             <p data-lang-en="VIP meet & greet, luggage handling, and executive transfers for a smooth arrival." data-lang-ar="استقبال خاص لكبار الشخصيات، وخدمة الأمتعة، ونقل فاخر لوصول سلس.">VIP meet & greet, luggage handling, and executive transfers for a smooth arrival.</p>
-
             <div class="card-actions">
-
               <a class="link-btn" href="#" onclick="openModal('Details', 'Details coming soon')" data-lang-en="Explore" data-lang-ar="استكشف">Explore
-
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-
               </a>
-
             </div>
-
           </div>
-
         </article>
-
         <article class="card" data-service="car-rental">
-
           <img src="images/services/cars.jpg" alt="Luxury car rental">
-
           <div class="card-body">
-
             <h3 data-lang-en="Car Rental" data-lang-ar="تأجير سيارات">Car Rental</h3>
-
-            <p data-lang-en="Premium fleet with chauffeur or self-drive options, by the day or long-term." data-lang-ar="أسطول فاخر من السيارات بالسائق، باليوم أو لفترات طويلة.">Premium fleet with chauffeur or self-drive options, by the day or long-term.</p>
-
+            <p data-lang-en="Premium fleet with chauffeur or self-drive options, by the day or long-term." data-lang-ar="أسطول فاخر من السيارات بالسائق أو بدون، باليوم أو لفترات طويلة.">Premium fleet with chauffeur or self-drive options, by the day or long-term.</p>
             <div class="card-actions">
-
-              <a class="link-btn" href="#" onclick="openModal('Details', 'Details coming soon')" data-lang-en="Explore" data-lang-ar="استكشف">Explore
-
+              <a class="link-btn" href="cars.html" data-lang-en="Explore" data-lang-ar="استكشف">Explore
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-
               </a>
-
             </div>
-
           </div>
-
         </article>
-
         <article class="card" data-service="hotels">
-
           <img src="images/services/hotels.jpg" alt="Luxury hotel room">
-
           <div class="card-body">
-
             <h3 data-lang-en="Hotels" data-lang-ar="فنادق">Hotels</h3>
-
             <p data-lang-en="Hand-picked stays with VIP perks, upgrades, and flexible arrangements." data-lang-ar="إقامات مختارة بعناية مع مزايا الـ VIP وترتيبات مرنة.">Hand-picked stays with VIP perks, upgrades, and flexible arrangements.</p>
-
             <div class="card-actions">
-
               <a class="link-btn" href="#" onclick="openModal('Details', 'Details coming soon')" data-lang-en="Explore" data-lang-ar="استكشف">Explore
-
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-
               </a>
-
             </div>
-
           </div>
-
         </article>
-
         <article class="card" data-service="chalets">
-
           <img src="images/services/chalets.jpg" alt="Private chalet by the sea">
-
           <div class="card-body">
-
             <h3 data-lang-en="Chalets" data-lang-ar="شاليهات">Chalets</h3>
-
-            <p data-lang-en="Enjoy your vacation in the finest chalets of the North Coast 🌊✨." data-lang-ar="استمتع بإجازتك في أجمل شاليهات ال  ساحل الشمالي 🌊✨
-
-متاح لدينا شاليهات للإيجار بمساحات مختلفة وعدد غرف متنوع">We offer a variety of rental chalets with different sizes and room.</p>
-
+            <p data-lang-en="Enjoy your vacation in the finest chalets of the North Coast 🌊✨." data-lang-ar="استمتع بإجازتك في أجمل شاليهات الساحل الشمالي 🌊✨.">Enjoy your vacation in the finest chalets of the North Coast 🌊✨.</p>
             <div class="card-actions">
-
               <a class="link-btn" href="#" onclick="openModal('Details', 'Details coming soon')" data-lang-en="Explore" data-lang-ar="استكشف">Explore
-
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-
               </a>
-
             </div>
-
           </div>
-
         </article>
-
         <article class="card" data-service="golf-cart">
-
           <img src="images/services/golfcart.jpg" alt="Golf cart service">
-
           <div class="card-body">
-
             <h3 data-lang-en="Golf Cart" data-lang-ar="سيارات جولف">Golf Cart</h3>
-
-            <p data-lang-en="
-
-Move around the North Coast with ease and comfort with our golf cart rental service
-
-We offer daily rentals with seating options for 4 or 6 passengers." data-lang-ar="استمتع بالتنقل بسهولة وراحة في الساحل الشمالي مع خدمة تأجير الجولف كار 🚗✨
-
-نوفر جولف كار للإيجار بالايام بعدد مقاعد يناسب احتياجاتك: 4 كراسي أو 6 كراسي.">
-
-Move around the North Coast with ease and comfort with our golf cart rental service
-
-We offer daily rentals with seating options for 4 or 6 passengers.</p>
-
+            <p data-lang-en="Move around the North Coast with ease and comfort with our golf cart rental service." data-lang-ar="استمتع بالتنقل بسهولة وراحة في الساحل الشمالي مع خدمة تأجير الجولف كار 🚗✨.">Move around the North Coast with ease and comfort with our golf cart rental service.</p>
             <div class="card-actions">
-
               <a class="link-btn" href="#" onclick="openModal('Details', 'Details coming soon')" data-lang-en="Explore" data-lang-ar="استكشف">Explore
-
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-
               </a>
-
             </div>
-
           </div>
-
         </article>
-
         <article class="card" data-service="guided-tours">
-
           <img src="images/services/tours.jpg" alt="Guided tour at the pyramids">
-
           <div class="card-body">
-
             <h3 data-lang-en="Guided Tours" data-lang-ar="جولات سياحية">Guided Tours</h3>
-
-            <p data-lang-en="Curated experiences to the Pyramids, museums, and hidden gems with expert guides." data-lang-ar="تجارب مصممة خصيصًا لك لزيارة الأهرامات والمتاحف والاماكن الاثرية مع مرشدين خبراء.">Curated experiences to the Pyramids, museums, and hidden gems with expert guides.</p>
-
+            <p data-lang-en="Curated experiences to the Pyramids, museums, and hidden gems with expert guides." data-lang-ar="تجارب مصممة خصيصًا لك لزيارة الأهرامات والمتاحف والأماكن الأثرية مع مرشدين خبراء.">Curated experiences to the Pyramids, museums, and hidden gems with expert guides.</p>
             <div class="card-actions">
-
               <a class="link-btn" href="#" onclick="openModal('Details', 'Details coming soon')" data-lang-en="Explore" data-lang-ar="استكشف">Explore
-
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-
               </a>
-
             </div>
-
           </div>
-
         </article>
-
       </div>
-
     </div>
-
   </section>
-<footer id="footer">
+  <footer id="footer">
     <div class="container luxury-foot">
-        <img class="footer-bg-logo" src="images/CrownGate.svg" alt="CrownGate logo background">
-        <h4 data-lang-en="Experience Luxury Like Never Before" data-lang-ar="تجربة فاخرة لا مثيل لها">Experience Luxury Like Never Before</h4>
-        <!--
-        <div class="footer-links">
-            <a href="#services" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})" data-lang-en="Services" data-lang-ar="خدماتنا">Services</a>
-            <a href="#" onclick="openModal('Trips', 'Trips coming soon')" data-lang-en="Trips" data-lang-ar="رحلات">Trips</a>
-            <a href="#footer" onclick="document.getElementById('footer').scrollIntoView({behavior:'smooth'})" data-lang-en="About Us" data-lang-ar="من نحن">About Us</a>
-            <a href="#footer" onclick="document.getElementById('footer').scrollIntoView({behavior:'smooth'})" data-lang-en="Contact Us" data-lang-ar="اتصل بنا">Contact Us</a>
-        </div> 
-      -->
-        <div class="contact-info">
-            <div><span data-lang-en="Email" data-lang-ar="البريد الإلكتروني">Email</span>: <a href="mailto:info@crowngate.com">info@crowngate.com</a></div>
-            <div><span data-lang-en="Phone" data-lang-ar="الهاتف">Phone</span>: <a href="tel:+201234567890">+20 123 456 7890</a></div>
-        </div>
-        <div class="social-icons">
-            <a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-whatsapp"></i>
-            </a>
-        </div>
+      <img class="footer-bg-logo" src="images/CrownGate.svg" alt="CrownGate logo background">
+      <h4 data-lang-en="Experience Luxury Like Never Before" data-lang-ar="تجربة فاخرة لا مثيل لها">Experience Luxury Like Never Before</h4>
+      <div class="contact-info">
+        <div><span data-lang-en="Email" data-lang-ar="البريد الإلكتروني">Email</span>: <a href="mailto:info@crowngate.com">info@crowngate.com</a></div>
+        <div><span data-lang-en="Phone" data-lang-ar="الهاتف">Phone</span>: <a href="tel:+201234567890">+20 123 456 7890</a></div>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
     </div>
     <div class="container">
-        <div class="copyright" data-lang-en="&copy; CrownGate. All rights reserved." data-lang-ar="&copy; كرون جيت. جميع الحقوق محفوظة.">&copy; <span id="year"></span> CrownGate. All rights reserved.</div>
+      <div class="copyright" data-lang-en="&copy; CrownGate. All rights reserved." data-lang-ar="&copy; كرون جيت. جميع الحقوق محفوظة.">&copy; <span id="year"></span> CrownGate. All rights reserved.</div>
     </div>
-</footer>  <div id="modal" class="modal">
+  </footer>
+  <div id="modal" class="modal">
     <div class="modal-content">
       <span class="close-btn" onclick="closeModal()">&times;</span>
       <h3 id="modal-title"></h3>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-lang-en="CrownGate - Car Rental" data-lang-ar="كرون جيت - تأجير سيارات">CrownGate - Car Rental</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container nav">
+            <a class="brand" href="index.html" aria-label="CrownGate Home">
+                <img src="images/logo.png" alt="CrownGate logo" />
+            </a>
+            <button class="hamburger" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="nav-links" aria-label="primary">
+                <a href="index.html#services" data-lang-en="Services" data-lang-ar="خدماتنا">Services</a>
+                <a href="#" onclick="event.preventDefault(); openModal('Trips', 'Trips coming soon');" data-lang-en="Trips" data-lang-ar="رحلات">Trips</a>
+                <a href="index.html#footer" data-lang-en="About" data-lang-ar="عن الشركة">About</a>
+                <a href="index.html#footer" data-lang-en="Support" data-lang-ar="دعم">Support</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="btn lang-toggle" onclick="toggleLanguage()">EN / AR</button>
+                <button class="btn btn-gold" onclick="openModal('Sign In', 'Sign In coming soon')" data-lang-en="Sign In" data-lang-ar="تسجيل الدخول">Sign In</button>
+                <button class="btn btn-gold" onclick="openModal('Sign Up', 'Sign Up coming soon')" data-lang-en="Sign Up" data-lang-ar="التسجيل">Sign Up</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="service-hero">
+            <div class="container">
+                <h1 data-lang-en="Luxury Car Rental" data-lang-ar="تأجير السيارات الفاخرة">Luxury Car Rental</h1>
+                <p data-lang-en="Choose from our premium fleet for a journey that redefines comfort and style." data-lang-ar="اختر من أسطولنا الفاخر لتجربة قيادة لا مثيل لها." class="section-sub">Choose from our premium fleet for a journey that redefines comfort and style.</p>
+            </div>
+        </section>
+
+        <section class="car-gallery">
+            <div class="container">
+                <div class="section-head">
+                    <div class="eyebrow" data-lang-en="Our Fleet" data-lang-ar="أسطولنا">Our Fleet</div>
+                    <h2 class="section-title" data-lang-en="A selection of elegance and performance" data-lang-ar="مجموعة مختارة من الأناقة والأداء">A selection of elegance and performance</h2>
+                </div>
+
+                <div class="car-cards">
+                    <div class="car-card">
+                        <img src="images/cars/range-rover.jpg" alt="Range Rover">
+                        <div class="card-body">
+                            <h3 data-lang-en="Range Rover" data-lang-ar="رانج روفر">Range Rover</h3>
+                            <p data-lang-en="Unmatched luxury and power for a commanding presence on any road." data-lang-ar="فخامة وقوة لا تضاهى لتجربة قيادة فريدة على أي طريق.">Unmatched luxury and power for a commanding presence on any road.</p>
+                            <div class="card-actions">
+                                <a class="link-btn" href="#" onclick="showGallery('Range Rover', ['images/cars/range-rover1.jpg', 'images/cars/range-rover2.jpg', 'images/cars/range-rover3.jpg', 'images/cars/range-rover4.jpg'])" data-lang-en="Gallery" data-lang-ar="معرض الصور">Gallery
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </a>
+                                <a class="link-btn book-btn" href="https://wa.me/1234567890?text=أود%20أن%20أحجز%20سيارة%20رانج%20روفر" target="_blank" rel="noopener noreferrer" data-lang-en="Book Now" data-lang-ar="احجز الآن">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="car-card">
+                        <img src="images/cars/s-class.jpg" alt="Mercedes S-Class">
+                        <div class="card-body">
+                            <h3 data-lang-en="Mercedes S-Class" data-lang-ar="مرسيدس S-Class">Mercedes S-Class</h3>
+                            <p data-lang-en="The epitome of automotive luxury, offering supreme comfort and advanced technology." data-lang-ar="قمة الفخامة في عالم السيارات، توفر راحة فائقة وتكنولوجيا متطورة.">The epitome of automotive luxury, offering supreme comfort and advanced technology.</p>
+                            <div class="card-actions">
+                                <a class="link-btn" href="#" onclick="showGallery('Mercedes S-Class', ['images/cars/s-class1.jpg', 'images/cars/s-class2.jpg', 'images/cars/s-class3.jpg'])" data-lang-en="Gallery" data-lang-ar="معرض الصور">Gallery
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </a>
+                                <a class="link-btn book-btn" href="https://wa.me/1234567890?text=أود%20أن%20أحجز%20سيارة%20مرسيدس%20S-Class" target="_blank" rel="noopener noreferrer" data-lang-en="Book Now" data-lang-ar="احجز الآن">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="car-card">
+                        <img src="images/cars/e-class.jpg" alt="Mercedes E-Class 200">
+                        <div class="card-body">
+                            <h3 data-lang-en="Mercedes E-Class 200" data-lang-ar="مرسيدس E-Class 200">Mercedes E-Class 200</h3>
+                            <p data-lang-en="A perfect blend of executive style, performance, and everyday comfort." data-lang-ar="مزيج مثالي بين الأناقة والأداء والراحة اليومية.">A perfect blend of executive style, performance, and everyday comfort.</p>
+                            <div class="card-actions">
+                                <a class="link-btn" href="#" onclick="showGallery('Mercedes E-Class 200', ['images/cars/e-class1.jpg', 'images/cars/e-class2.jpg', 'images/cars/e-class3.jpg'])" data-lang-en="Gallery" data-lang-ar="معرض الصور">Gallery
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </a>
+                                <a class="link-btn book-btn" href="https://wa.me/1234567890?text=أود%20أن%20أحجز%20سيارة%20مرسيدس%20E-Class%20200" target="_blank" rel="noopener noreferrer" data-lang-en="Book Now" data-lang-ar="احجز الآن">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="car-card">
+                        <img src="images/cars/suv.jpg" alt="SUV Cars">
+                        <div class="card-body">
+                            <h3 data-lang-en="SUV Cars" data-lang-ar="سيارات الدفع الرباعي">SUV Cars</h3>
+                            <p data-lang-en="Perfect for family trips and adventures, our SUVs include models like Sportage, Tucson, Geely, and Xpander." data-lang-ar="مثالية للرحلات العائلية والمغامرات، تشمل سيارات الدفع الرباعي سبورتاج، توسان، جيتور، واكسبندر.">Perfect for family trips and adventures, our SUVs include models like Sportage, Tucson, Geely, and Xpander.</p>
+                            <div class="card-actions">
+                                <a class="link-btn" href="#" onclick="showGallery('SUV Cars', ['images/cars/sportage.jpg', 'images/cars/tucson.jpg', 'images/cars/geely.jpg'])" data-lang-en="Gallery" data-lang-ar="معرض الصور">Gallery
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </a>
+                                <a class="link-btn book-btn" href="https://wa.me/1234567890?text=أود%20أن%20أحجز%20سيارة%20SUV" target="_blank" rel="noopener noreferrer" data-lang-en="Book Now" data-lang-ar="احجز الآن">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="car-card">
+                        <img src="images/cars/sedan.jpg" alt="Sedan Cars">
+                        <div class="card-body">
+                            <h3 data-lang-en="Sedan Cars" data-lang-ar="سيارات سيدان">Sedan Cars</h3>
+                            <p data-lang-en="Efficient and elegant, our sedan fleet features popular models such as Toyota Corolla, Elantra, and Cerato." data-lang-ar="سيارات عملية وأنيقة، يضم أسطولنا موديلات شهيرة مثل تويوتا كورولا، إلنترا، وسيراتو.">Efficient and elegant, our sedan fleet features popular models such as Toyota Corolla, Elantra, and Cerato.</p>
+                            <div class="card-actions">
+                                <a class="link-btn" href="#" onclick="showGallery('Sedan Cars', ['images/cars/corolla.jpg', 'images/cars/elantra.jpg', 'images/cars/cerato.jpg'])" data-lang-en="Gallery" data-lang-ar="معرض الصور">Gallery
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </a>
+                                <a class="link-btn book-btn" href="https://wa.me/1234567890?text=أود%20أن%20أحجز%20سيارة%20سيدان" target="_blank" rel="noopener noreferrer" data-lang-en="Book Now" data-lang-ar="احجز الآن">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="car-card">
+                        <img src="images/cars/viano.jpg" alt="Mercedes Viano">
+                        <div class="card-body">
+                            <h3 data-lang-en="Mercedes Viano" data-lang-ar="مرسيدس فيانو">Mercedes Viano</h3>
+                            <p data-lang-en="The ultimate choice for group travel with exceptional comfort and space, perfect for family or corporate trips." data-lang-ar="الخيار الأمثل للسفر الجماعي بأقصى درجات الراحة والمساحة، مثالية للعائلات أو الوفود.">The ultimate choice for group travel with exceptional comfort and space, perfect for family or corporate trips.</p>
+                            <div class="card-actions">
+                                <a class="link-btn" href="#" onclick="showGallery('Mercedes Viano', ['images/cars/viano1.jpg', 'images/cars/viano2.jpg', 'images/cars/viano3.jpg'])" data-lang-en="Gallery" data-lang-ar="معرض الصور">Gallery
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </a>
+                                <a class="link-btn book-btn" href="https://wa.me/1234567890?text=أود%20أن%20أحجز%20سيارة%20مرسيدس%20فيانو" target="_blank" rel="noopener noreferrer" data-lang-en="Book Now" data-lang-ar="احجز الآن">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer id="footer">
+        <div class="container luxury-foot">
+            <img class="footer-bg-logo" src="images/CrownGate.svg" alt="CrownGate logo background">
+            <h4 data-lang-en="Experience Luxury Like Never Before" data-lang-ar="تجربة فاخرة لا مثيل لها">Experience Luxury Like Never Before</h4>
+            <div class="contact-info">
+                <div><span data-lang-en="Email" data-lang-ar="البريد الإلكتروني">Email</span>: <a href="mailto:info@crowngate.com">info@crowngate.com</a></div>
+                <div><span data-lang-en="Phone" data-lang-ar="الهاتف">Phone</span>: <a href="tel:+201234567890">+20 123 456 7890</a></div>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright" data-lang-en="&copy; CrownGate. All rights reserved." data-lang-ar="&copy; كرون جيت. جميع الحقوق محفوظة.">&copy; <span id="year"></span> CrownGate. All rights reserved.</div>
+        </div>
+    </footer>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h3 id="modal-title"></h3>
+            <p id="modal-message"></p>
+        </div>
+    </div>
+    <div id="galleryModal" class="modal">
+        <div class="modal-content gallery-modal-content">
+            <span class="close-btn" onclick="closeGalleryModal()">&times;</span>
+            <h3 id="gallery-title"></h3>
+            <div id="gallery-images" class="gallery-images"></div>
+        </div>
+    </div>
+    <script src="script.js" defer></script>
+</body>
+</html>
