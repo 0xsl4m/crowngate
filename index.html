@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CrownGate – Egy Concierge Services</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="CrownGate Home">
+        <img src="images/logo.png" alt="CrownGate logo" />
+        <span class="title">CrownGate</span>
+      </a>
+
+      <nav class="nav-links" aria-label="primary">
+        <a href="#services">Services</a>
+        <a href="#trips" onclick="event.preventDefault(); alert('Trips coming soon');">Trips</a>
+        <a href="#about" onclick="event.preventDefault(); document.getElementById('footer').scrollIntoView({behavior:'smooth'});">About</a>
+        <a href="#support" onclick="event.preventDefault(); document.getElementById('footer').scrollIntoView({behavior:'smooth'});">Support</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn btn-outline" onclick="alert('Sign In coming soon')">Sign In</button>
+        <button class="btn btn-gold" onclick="alert('Sign Up coming soon')">Sign Up</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="top" class="hero">
+    <div class="container">
+      <span class="tag">Beyond Ordinary Travel</span>
+      <h1>Elevate Your <span class="accent">Journey</span></h1>
+      <p>Discover extraordinary destinations and experiences tailored to exceed your highest expectations.</p>
+      <div class="cta">
+        <button class="btn btn-white btn-gold" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">
+          Explore Experiences
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Floating search bar -->
+    <div class="search-bar" role="search" aria-label="Quick search">
+      <div class="search-row">
+        <label class="input" aria-label="Location">
+          <select id="location">
+            <option value="" selected disabled>Location</option>
+            <option>Cairo</option>
+            <option>NorthCoast</option>
+            <option>Sharm</option>
+          </select>
+        </label>
+        <label class="input" aria-label="Service">
+          <select id="service">
+            <option value="" selected disabled>Service</option>
+            <option value="airport-pickup">Airport Pickup</option>
+            <option value="car-rental">Car Rental</option>
+            <option value="hotels">Hotels</option>
+            <option value="chalets">Chalets</option>
+            <option value="golf-cart">Golf Cart</option>
+            <option value="guided-tours">Guided Tours</option>
+          </select>
+        </label>
+        <button class="btn btn-gold search-btn" onclick="performSearch()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Search
+        </button>
+      </div>
+    </div>
+
+    <div class="scroll-cue" aria-hidden="true">▼</div>
+  </main>
+
+  <!-- OUR SERVICES -->
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Our Services</div>
+        <h2 class="section-title">Experience luxury with our premium concierge offerings</h2>
+        <p class="section-sub">We curate seamless, end‑to‑end arrangements so you can focus on the journey, not the logistics.</p>
+      </div>
+
+      <div class="cards">
+        <!-- CARD 1: Airport Pickup -->
+        <article class="card" data-service="airport-pickup">
+          <img src="images/services/airport.jpg" alt="Private airport pickup">
+          <div class="card-body">
+            <h3>Airport Pickup</h3>
+            <p>VIP meet & greet, luggage handling, and executive transfers for a smooth arrival.</p>
+            <div class="card-actions">
+              <a class="link-btn" href="#" onclick="alert('Details coming soon')">Explore
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 2: Car Rental -->
+        <article class="card" data-service="car-rental">
+          <img src="images/services/cars.jpg" alt="Luxury car rental">
+          <div class="card-body">
+            <h3>Car Rental</h3>
+            <p>Premium fleet with chauffeur or self‑drive options, by the day or long‑term.</p>
+            <div class="card-actions">
+              <a class="link-btn" href="#" onclick="alert('Details coming soon')">Explore
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 3: Hotels -->
+        <article class="card" data-service="hotels">
+          <img src="images/services/hotels.jpg" alt="Luxury hotel room">
+          <div class="card-body">
+            <h3>Hotels</h3>
+            <p>Hand‑picked stays with VIP perks, upgrades, and flexible arrangements.</p>
+            <div class="card-actions">
+              <a class="link-btn" href="#" onclick="alert('Details coming soon')">Explore
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 4: Chalets -->
+        <article class="card" data-service="chalets">
+          <img src="images/services/chalets.jpg" alt="Private chalet by the sea">
+          <div class="card-body">
+            <h3>Chalets</h3>
+            <p>Beachfront and mountain chalets for families, retreats, and special occasions.</p>
+            <div class="card-actions">
+              <a class="link-btn" href="#" onclick="alert('Details coming soon')">Explore
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 5: Golf Cart -->
+        <article class="card" data-service="golf-cart">
+          <img src="images/services/golfcart.jpg" alt="Golf cart service">
+          <div class="card-body">
+            <h3>Golf Cart</h3>
+            <p>On‑resort and private‑venue mobility with flexible hourly or daily plans.</p>
+            <div class="card-actions">
+              <a class="link-btn" href="#" onclick="alert('Details coming soon')">Explore
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 6: Guided Tours -->
+        <article class="card" data-service="guided-tours">
+          <img src="images/services/tours.jpg" alt="Guided tour at the pyramids">
+          <div class="card-body">
+            <h3>Guided Tours</h3>
+            <p>Curated experiences to the Pyramids, museums, and hidden gems with expert guides.</p>
+            <div class="card-actions">
+              <a class="link-btn" href="#" onclick="alert('Details coming soon')">Explore
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="container foot-grid">
+      <div class="foot">
+        <h4>Experience Luxury Like Never Before</h4>
+        <p>Our exclusive services redefine premium experiences, meticulously designed for those who seek the extraordinary.</p>
+      </div>
+
+      <div class="foot">
+        <div class="logo-row">
+          <img src="images/logo.png" alt="CrownGate logo small">
+          <div>
+            <strong>CrownGate</strong><br>
+            <small>Egy Concierge Services</small>
+          </div>
+        </div>
+        <p style="margin-top:10px;">Your premium concierge for luxury travel, exotic car rentals, and exclusive experiences.</p>
+      </div>
+
+      <div class="foot">
+        <h5 style="margin:0 0 8px; font-size:16px; color:var(--muted); text-transform:uppercase; letter-spacing:1.2px;">Company</h5>
+        <ul>
+          <li><a href="#about" onclick="document.getElementById('footer').scrollIntoView({behavior:'smooth'})">About Us</a></li>
+          <li><a href="#support" onclick="document.getElementById('footer').scrollIntoView({behavior:'smooth'})">Support</a></li>
+          <li><a href="#contact" onclick="document.getElementById('footer').scrollIntoView({behavior:'smooth'})">Contact</a></li>
+        </ul>
+        <div style="margin-top:14px;">
+          <div>Email: <a href="mailto:info@crowngate.com">info@crowngate.com</a></div>
+          <div>Phone: <a href="tel:+201234567890">+20 123 456 7890</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container"><div class="copyright">© <span id="year"></span> CrownGate. All rights reserved.</div></div>
+  </footer>
+
+  <!-- Link to external JS -->
+  <script src="script.js" defer></script>
+</body>
+</html>
