@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-lang-en="CrownGate - Guided Tours" data-lang-ar="كرون جيت - جولات سياحية">CrownGate - Guided Tours</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container nav">
+            <a class="brand" href="index.html" aria-label="CrownGate Home">
+                <img src="images/logo.png" alt="CrownGate logo" />
+            </a>
+            <button class="hamburger" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="nav-links" aria-label="primary">
+                <a href="index.html#services" data-lang-en="Services" data-lang-ar="خدماتنا">Services</a>
+                <!--<a href="#" onclick="event.preventDefault(); openModal('Trips', 'Trips coming soon');" data-lang-en="Trips" data-lang-ar="رحلات">Trips</a>-->
+                <!--<a href="index.html#footer" data-lang-en="About" data-lang-ar="عن الشركة">About</a> -->
+                <a href="index.html#footer" data-lang-en="Support" data-lang-ar="دعم">Support</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="btn lang-toggle" onclick="toggleLanguage()">EN / AR</button>
+                <!--<button class="btn btn-gold" onclick="openModal('Sign In', 'Sign In coming soon')" data-lang-en="Sign In" data-lang-ar="تسجيل الدخول">Sign In</button>
+                <button class="btn btn-gold" onclick="openModal('Sign Up', 'Sign Up coming soon')" data-lang-en="Sign Up" data-lang-ar="التسجيل">Sign Up</button>
+                --> 
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="service-hero">
+            <div class="container">
+                <h1 data-lang-en="Guided Tours" data-lang-ar="جولات سياحية">Guided Tours</h1>
+                <p class="section-sub" data-lang-en="Explore the rich history and culture of Egypt with our expertly guided tours." data-lang-ar="اكتشف التاريخ الغني والثقافة العريقة لمصر من خلال جولاتنا السياحية المتميزة.">Explore the rich history and culture of Egypt with our expertly guided tours.</p>
+            </div>
+        </section>
+
+        <section class="service-gallery">
+            <div class="container">
+                <div class="section-head">
+                    <div class="eyebrow" data-lang-en="Our Tours" data-lang-ar="جولاتنا">Our Tours</div>
+                    <h2 class="section-title" data-lang-en="Discover the wonders of Egypt" data-lang-ar="اكتشف عجائب مصر">Discover the wonders of Egypt</h2>
+                </div>
+                <div class="cards">
+                    <article class="card">
+                        <img src="images/tours/pyramids.jpg" alt="زيارة الأهرامات ومتحف القاهرة">
+                        <div class="card-body">
+                            <h3 data-lang-en="Pyramids & Egyptian Museum" data-lang-ar="الأهرامات ومتحف القاهرة">Pyramids & Egyptian Museum</h3>
+                            <p data-lang-en="A journey back in time to the Great Pyramids of Giza and the priceless treasures of the Egyptian Museum." data-lang-ar="رحلة عبر الزمن إلى أهرامات الجيزة العظيمة وكنوز المتحف المصري التي لا تقدر بثمن.">A journey back in time to the Great Pyramids of Giza and the priceless treasures of the Egyptian Museum.</p>
+                            <div class="card-actions">
+                                <!--<a class="link-btn" href="#" onclick="showGallery('Pyramids & Egyptian Museum', ['images/tours/pyramids1.jpg', 'images/tours/pyramids2.jpg', 'images/tours/pyramids3.jpg'])" data-lang-en="Gallery" data-lang-ar="جاليري">Gallery
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </a>-->
+                                <a class="link-btn book-btn" href="https://wa.me/+201234567890?text=أود%20أن%20أحجز%20جولة%20الأهرامات%20والمتحف%20المصري" target="_blank" rel="noopener noreferrer" data-lang-en="Book Now" data-lang-ar="احجز الآن">Book Now</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="images/tours/The-Grand-Egyptian-Museum-Giza-Museum.webp" alt="زيارة المتحف الكبير والحضارات">
+                        <div class="card-body">
+                            <h3 data-lang-en="Grand Egyptian Museum & Civilizations Museum" data-lang-ar="المتحف الكبير و متحف الحضارات">Grand Egyptian Museum & Civilizations Museum</h3>
+                            <p data-lang-en="An in-depth look at Egypt's history from ancient times to the modern era at the Grand Egyptian Museum and the National Museum of Egyptian Civilization." data-lang-ar="نظرة عميقة على تاريخ مصر من العصور القديمة حتى العصر الحديث في المتحف المصري الكبير ومتحف الحضارات.">An in-depth look at Egypt's history from ancient times to the modern era at the Grand Egyptian Museum and the National Museum of Egyptian Civilization.</p>
+                            <div class="card-actions">
+                                <!--<a class="link-btn" href="#" onclick="showGallery('Grand Museum & Civilizations', ['images/tours/grand-museum1.jpg', 'images/tours/grand-museum2.jpg', 'images/tours/grand-museum3.jpg'])" data-lang-en="Gallery" data-lang-ar="جاليري">Gallery
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </a>-->
+                                <a class="link-btn book-btn" href="https://wa.me/+201234567890?text=أود%20أن%20أحجز%20جولة%20المتحف%20الكبير%20والحضارات" target="_blank" rel="noopener noreferrer" data-lang-en="Book Now" data-lang-ar="احجز الآن">Book Now</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="images/tours/old-cairo.jpg" alt="زيارة معالم القاهرة القديمة">
+                        <div class="card-body">
+                            <h3 data-lang-en="Old Cairo Landmarks" data-lang-ar="معالم القاهرة القديمة">Old Cairo Landmarks</h3>
+                            <p data-lang-en="A fascinating walk through the historic streets of El-Moez, Khan El-Khalili, and other key Islamic landmarks." data-lang-ar="جولة ساحرة في شوارع القاهرة التاريخية، تشمل شارع المعز وخان الخليلي وغيرها من المعالم الإسلامية الرئيسية.">A fascinating walk through the historic streets of El-Moez, Khan El-Khalili, and other key Islamic landmarks.</p>
+                            <div class="card-actions">
+                                <!--<a class="link-btn" href="#" onclick="showGallery('Old Cairo Landmarks', ['images/tours/old-cairo1.jpg', 'images/tours/old-cairo2.jpg', 'images/tours/old-cairo3.jpg'])" data-lang-en="Gallery" data-lang-ar="جاليري">Gallery
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </a>-->
+                                <a class="link-btn book-btn" href="https://wa.me/+201234567890?text=أود%20أن%20أحجز%20جولة%20معالم%20القاهرة%20القديمة" target="_blank" rel="noopener noreferrer" data-lang-en="Book Now" data-lang-ar="احجز الآن">Book Now</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <div class="container luxury-foot">
+            <img class="footer-bg-logo" src="images/CrownGate.svg" alt="CrownGate logo background">
+            <h4 data-lang-en="Experience Luxury Like Never Before" data-lang-ar="تجربة فاخرة لا مثيل لها">Experience Luxury Like Never Before</h4>
+            <div class="contact-info">
+                <div><span data-lang-en="Email" data-lang-ar="البريد الإلكتروني">Email</span>: <a href="mailto:info@crowngate.com">info@crowngate.com</a></div>
+                <div><span data-lang-en="Phone" data-lang-ar="الهاتف">Phone</span>: <a href="tel:+201234567890">+20 123 456 7890</a></div>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright" data-lang-en="&copy; CrownGate. All rights reserved." data-lang-ar="&copy; كرون جيت. جميع الحقوق محفوظة.">&copy; <span id="year"></span> CrownGate. All rights reserved.</div>
+        </div>
+    </footer>
+    
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h3 id="modal-title"></h3>
+            <p id="modal-message"></p>
+        </div>
+    </div>
+    <div id="galleryModal" class="modal">
+        <div class="modal-content gallery-modal-content">
+            <span class="close-btn" onclick="closeGalleryModal()">&times;</span>
+            <h3 id="gallery-title"></h3>
+            <div id="gallery-images" class="gallery-images"></div>
+        </div>
+    </div>
+    <script src="script.js" defer></script>
+</body>
+</html>

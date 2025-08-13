@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-lang-en="CrownGate - Airport Services" data-lang-ar="كرون جيت - خدمات المطار">CrownGate - Airport Services</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container nav">
+            <a class="brand" href="index.html" aria-label="CrownGate Home">
+                <img src="images/logo.png" alt="CrownGate logo" />
+            </a>
+            <button class="hamburger" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="nav-links" aria-label="primary">
+                <a href="index.html#services" data-lang-en="Services" data-lang-ar="خدماتنا">Services</a>
+                <!--<a href="#" onclick="event.preventDefault(); openModal('Trips', 'Trips coming soon');" data-lang-en="Trips" data-lang-ar="رحلات">Trips</a>-->
+                <!--<a href="index.html#footer" data-lang-en="About" data-lang-ar="عن الشركة">About</a> -->
+                <a href="index.html#footer" data-lang-en="Support" data-lang-ar="دعم">Support</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="btn lang-toggle" onclick="toggleLanguage()">EN / AR</button>
+                <!--<button class="btn btn-gold" onclick="openModal('Sign In', 'Sign In coming soon')" data-lang-en="Sign In" data-lang-ar="تسجيل الدخول">Sign In</button>
+                <button class="btn btn-gold" onclick="openModal('Sign Up', 'Sign Up coming soon')" data-lang-en="Sign Up" data-lang-ar="التسجيل">Sign Up</button>
+                --> 
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="service-hero">
+            <div class="container">
+                <h1 data-lang-en="Airport Pickup Services" data-lang-ar="خدمات الاستقبال من المطار">Airport Pickup Services</h1>
+                <p class="section-sub" data-lang-en="Enjoy a smooth and luxurious arrival experience with our premium airport services." data-lang-ar="استمتع بتجربة وصول سلسة وفاخرة مع خدماتنا المتميزة في المطار.">Enjoy a smooth and luxurious arrival experience with our premium airport services.</p>
+            </div>
+        </section>
+
+        <section class="service-gallery">
+            <div class="container">
+                <div class="section-head">
+                    <div class="eyebrow" data-lang-en="Our Offerings" data-lang-ar="عروضنا">Our Offerings</div>
+                    <h2 class="section-title" data-lang-en="Choose your level of comfort" data-lang-ar="اختر مستوى راحتك">Choose your level of comfort</h2>
+                </div>
+                <div class="cards">
+                    <article class="card">
+                        <img src="images/services/airport.jpg" alt="Meet & Assist">
+                        <div class="card-body">
+                            <h3 data-lang-en="Meet & Assist" data-lang-ar="خدمة استقبال ومساعدة">Meet & Assist</h3>
+                            <p data-lang-en="Airport Meet and greet service with assistance with Passport control, Visa, and Luggage handling. $ 20/ Person + $ 25 Visa fees." data-lang-ar="خدمة استقبال ومساعدة في المطار تشمل المساعدة في إجراءات الجوازات والتأشيرة واستلام الأمتعة. $20/للفرد + $25 رسوم تأشيرة.">Airport Meet and greet service with assistance with Passport control, Visa, and Luggage handling. $ 20/ Person + $ 25 Visa fees.</p>
+                            <div class="card-actions">
+                                <!--<a class="link-btn" href="#" onclick="openModal('Meet & Assist Details', 'This service provides a dedicated representative to assist with all airport procedures, including passport control, visa, and luggage handling.')" data-lang-en="More Details" data-lang-ar="تفاصيل أكثر">More Details
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </a>-->
+                                <a class="link-btn book-btn" href="https://wa.me/+201234567890?text=أود%20أن%20أحجز%20خدمة%20Meet%20&%20Assist%20في%20المطار" target="_blank" rel="noopener noreferrer" data-lang-en="Book Now" data-lang-ar="احجز الآن">Book Now</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="images/services/airport.jpg" alt="Meet & Assist Plus">
+                        <div class="card-body">
+                            <h3 data-lang-en="Meet & Assist Plus" data-lang-ar="خدمة استقبال ومساعدة بلس">Meet & Assist Plus</h3>
+                            <p data-lang-en="Golf cart to take you in airport with a rep to finalize your visa, Customs, and Luggage handling. $ 50 / person + $ 25 visa Charges." data-lang-ar="جولف كار لتنقلك داخل المطار مع مندوب لإنهاء إجراءات التأشيرة والجمارك واستلام الأمتعة. $50/للفرد + $25 رسوم تأشيرة.">Golf cart to take you in airport with a rep to finalize your visa, Customs, and Luggage handling. $ 50 / person + $ 25 visa Charges.</p>
+                            <div class="card-actions">
+                                <!--<a class="link-btn" href="#" onclick="openModal('Meet & Assist Plus Details', 'This service includes all the benefits of Meet & Assist, plus a golf cart for easy and quick transportation within the airport terminals.')" data-lang-en="More Details" data-lang-ar="تفاصيل أكثر">More Details
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </a>-->
+                                <a class="link-btn book-btn" href="https://wa.me/+201234567890?text=أود%20أن%20أحجز%20خدمة%20Meet%20&%20Assist%20Plus%20في%20المطار" target="_blank" rel="noopener noreferrer" data-lang-en="Book Now" data-lang-ar="احجز الآن">Book Now</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="images/services/airport.jpg" alt="VIP Service">
+                        <div class="card-body">
+                            <h3 data-lang-en="VIP Service" data-lang-ar="خدمة الـ VIP">VIP Service</h3>
+                            <p data-lang-en="VIP lounge access including Meet & Greet service, Private luxury car take you in airport , and Luggage handling. $ 225 per person + $ 25 Visa Fees Option." data-lang-ar="وصول إلى صالة كبار الشخصيات مع خدمة الاستقبال، والنقل داخل المطار بسيارة فاخره وتخليص الاجراءات و المساعدة في الجمارك، واستلام الأمتعة. $225/للفرد + $25 رسوم تأشيرة اختيارية.">VIP lounge access including Meet & Greet service, Customs, and Luggage handling. $ 225 per person + $ 25 Visa Fees Option.</p>
+                            <div class="card-actions">
+                                <!--<a class="link-btn" href="#" onclick="openModal('VIP Service Details', 'This service provides access to the VIP lounge, along with a dedicated representative for all procedures and private luxury car transfer.')" data-lang-en="More Details" data-lang-ar="تفاصيل أكثر">More Details
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </a>-->
+                                <a class="link-btn book-btn" href="https://wa.me/+201234567890?text=أود%20أن%20أحجز%20خدمة%20VIP%20للمطار" target="_blank" rel="noopener noreferrer" data-lang-en="Book Now" data-lang-ar="احجز الآن">Book Now</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <div class="container luxury-foot">
+            <img class="footer-bg-logo" src="images/CrownGate.svg" alt="CrownGate logo background">
+            <h4 data-lang-en="Experience Luxury Like Never Before" data-lang-ar="تجربة فاخرة لا مثيل لها">Experience Luxury Like Never Before</h4>
+            <div class="contact-info">
+                <div><span data-lang-en="Email" data-lang-ar="البريد الإلكتروني">Email</span>: <a href="mailto:info@crowngate.com">info@crowngate.com</a></div>
+                <div><span data-lang-en="Phone" data-lang-ar="الهاتف">Phone</span>: <a href="tel:+201234567890">+20 123 456 7890</a></div>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright" data-lang-en="&copy; CrownGate. All rights reserved." data-lang-ar="&copy; كرون جيت. جميع الحقوق محفوظة.">&copy; <span id="year"></span> CrownGate. All rights reserved.</div>
+        </div>
+    </footer>
+    
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h3 id="modal-title"></h3>
+            <p id="modal-message"></p>
+        </div>
+    </div>
+    <div id="galleryModal" class="modal">
+        <div class="modal-content gallery-content">
+            <span class="close-btn" onclick="closeGallery()">&times;</span>
+            <h3 id="gallery-title"></h3>
+            <div class="gallery-container">
+                <div class="gallery-inner"></div>
+                <button class="prev" onclick="prevImage()">&#10094;</button>
+                <button class="next" onclick="nextImage()">&#10095;</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js" defer></script>
+</body>
+</html>

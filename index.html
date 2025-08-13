@@ -10,27 +10,28 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="container nav">
-      <a class="brand" href="#top" aria-label="CrownGate Home" onclick="resetSearch()">
-        <img src="images/logo.png" alt="CrownGate logo" />
-        </a>
-      <button class="hamburger" onclick="toggleMenu()">
-        <i class="fas fa-bars"></i>
-      </button>
-      <nav class="nav-links" aria-label="primary">
-        <a href="#services" onclick="resetSearch()" data-lang-en="Services" data-lang-ar="خدماتنا">Services</a>
-        <a href="#" onclick="event.preventDefault(); openModal('Trips', 'Trips coming soon');" data-lang-en="Trips" data-lang-ar="رحلات">Trips</a>
-        <a href="#footer" onclick="event.preventDefault(); document.getElementById('footer').scrollIntoView({behavior:'smooth'});" data-lang-en="About" data-lang-ar="عن الشركة">About</a>
-        <a href="#footer" onclick="event.preventDefault(); document.getElementById('footer').scrollIntoView({behavior:'smooth'});" data-lang-en="Support" data-lang-ar="دعم">Support</a>
-      </nav>
-      <div class="nav-actions">
-        <button class="btn lang-toggle" onclick="toggleLanguage()">EN / AR</button>
-        <button class="btn btn-gold" onclick="openModal('Sign In', 'Sign In coming soon')" data-lang-en="Sign In" data-lang-ar="تسجيل الدخول">Sign In</button>
-        <button class="btn btn-gold" onclick="openModal('Sign Up', 'Sign Up coming soon')" data-lang-en="Sign Up" data-lang-ar="التسجيل">Sign Up</button>
-      </div>
-    </div>
-  </header>
+    <header>
+        <div class="container nav">
+            <a class="brand" href="index.html" aria-label="CrownGate Home">
+                <img src="images/logo.png" alt="CrownGate logo" />
+            </a>
+            <button class="hamburger" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="nav-links" aria-label="primary">
+                <a href="index.html#services" data-lang-en="Services" data-lang-ar="خدماتنا">Services</a>
+                <!--<a href="#" onclick="event.preventDefault(); openModal('Trips', 'Trips coming soon');" data-lang-en="Trips" data-lang-ar="رحلات">Trips</a>-->
+                <!--<a href="index.html#footer" data-lang-en="About" data-lang-ar="عن الشركة">About</a> -->
+                <a href="index.html#footer" data-lang-en="Support" data-lang-ar="دعم">Support</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="btn lang-toggle" onclick="toggleLanguage()">EN / AR</button>
+                <!--<button class="btn btn-gold" onclick="openModal('Sign In', 'Sign In coming soon')" data-lang-en="Sign In" data-lang-ar="تسجيل الدخول">Sign In</button>
+                <button class="btn btn-gold" onclick="openModal('Sign Up', 'Sign Up coming soon')" data-lang-en="Sign Up" data-lang-ar="التسجيل">Sign Up</button>
+                --> 
+            </div>
+        </div>
+    </header>
   <main id="top" class="hero">
     <div class="container">
       <span class="tag" data-lang-en="Beyond Ordinary Travel" data-lang-ar="سفر يتجاوز المألوف">Beyond Ordinary Travel</span>
@@ -87,7 +88,7 @@
             <h3 data-lang-en="Airport Pickup" data-lang-ar="استقبال من المطار">Airport Pickup</h3>
             <p data-lang-en="VIP meet & greet, luggage handling, and executive transfers for a smooth arrival." data-lang-ar="استقبال خاص لكبار الشخصيات، وخدمة الأمتعة، ونقل فاخر لوصول سلس.">VIP meet & greet, luggage handling, and executive transfers for a smooth arrival.</p>
             <div class="card-actions">
-              <a class="link-btn" href="#" onclick="openModal('Details', 'Details coming soon')" data-lang-en="Explore" data-lang-ar="استكشف">Explore
+              <a class="link-btn" href="airport-pickup.html" onclick="openModal('Details', 'Details coming soon')" data-lang-en="Explore" data-lang-ar="استكشف">Explore
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </a>
             </div>
@@ -111,7 +112,7 @@
             <h3 data-lang-en="Hotels" data-lang-ar="فنادق">Hotels</h3>
             <p data-lang-en="Hand-picked stays with VIP perks, upgrades, and flexible arrangements." data-lang-ar="إقامات مختارة بعناية مع مزايا الـ VIP وترتيبات مرنة.">Hand-picked stays with VIP perks, upgrades, and flexible arrangements.</p>
             <div class="card-actions">
-              <a class="link-btn" href="#" onclick="openModal('Details', 'Details coming soon')" data-lang-en="Explore" data-lang-ar="استكشف">Explore
+              <a class="link-btn" href="hotels.html" onclick="openModal('Details', 'Details coming soon')" data-lang-en="Explore" data-lang-ar="استكشف">Explore
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </a>
             </div>
@@ -123,7 +124,7 @@
             <h3 data-lang-en="Chalets" data-lang-ar="شاليهات">Chalets</h3>
             <p data-lang-en="Enjoy your vacation in the finest chalets of the North Coast 🌊✨." data-lang-ar="استمتع بإجازتك في أجمل شاليهات الساحل الشمالي 🌊✨.">Enjoy your vacation in the finest chalets of the North Coast 🌊✨.</p>
             <div class="card-actions">
-              <a class="link-btn" href="#" onclick="openModal('Details', 'Details coming soon')" data-lang-en="Explore" data-lang-ar="استكشف">Explore
+              <a class="link-btn" href="chalets.html" onclick="openModal('Details', 'Details coming soon')" data-lang-en="Explore" data-lang-ar="استكشف">Explore
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </a>
             </div>
@@ -135,7 +136,7 @@
             <h3 data-lang-en="Golf Cart" data-lang-ar="سيارات جولف">Golf Cart</h3>
             <p data-lang-en="Move around the North Coast with ease and comfort with our golf cart rental service." data-lang-ar="استمتع بالتنقل بسهولة وراحة في الساحل الشمالي مع خدمة تأجير الجولف كار 🚗✨.">Move around the North Coast with ease and comfort with our golf cart rental service.</p>
             <div class="card-actions">
-              <a class="link-btn" href="#" onclick="openModal('Details', 'Details coming soon')" data-lang-en="Explore" data-lang-ar="استكشف">Explore
+              <a class="link-btn" href="golf-cart.html" onclick="openModal('Details', 'Details coming soon')" data-lang-en="Explore" data-lang-ar="استكشف">Explore
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </a>
             </div>
@@ -147,7 +148,7 @@
             <h3 data-lang-en="Guided Tours" data-lang-ar="جولات سياحية">Guided Tours</h3>
             <p data-lang-en="Curated experiences to the Pyramids, museums, and hidden gems with expert guides." data-lang-ar="تجارب مصممة خصيصًا لك لزيارة الأهرامات والمتاحف والأماكن الأثرية مع مرشدين خبراء.">Curated experiences to the Pyramids, museums, and hidden gems with expert guides.</p>
             <div class="card-actions">
-              <a class="link-btn" href="#" onclick="openModal('Details', 'Details coming soon')" data-lang-en="Explore" data-lang-ar="استكشف">Explore
+              <a class="link-btn" href="guided-tours.html" onclick="openModal('Details', 'Details coming soon')" data-lang-en="Explore" data-lang-ar="استكشف">Explore
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </a>
             </div>
