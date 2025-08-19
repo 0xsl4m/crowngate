@@ -206,7 +206,7 @@ header.scrolled {
 
   text-align: center; color: var(--white);
 
-  background: linear-gradient(var(--overlay), var(--overlay)), url('images/new-hero-bg.avif') center/cover no-repeat fixed;
+  background: linear-gradient(var(--overlay), var(--overlay)), url('images/Cairo-skyline-Egypt.webp') center/cover no-repeat fixed;
 
   animation: fadeIn 1.5s ease-out;
 
