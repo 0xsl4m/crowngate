@@ -1,4 +1,19 @@
-// ... باقي كود JavaScript الخاص بك ...
+// Load Footer
+async function loadFooter() {
+    try {
+        const response = await fetch('footer.html');
+        const footerHTML = await response.text();
+        document.body.insertAdjacentHTML('beforeend', footerHTML);
+        
+        // Update year after footer is loaded
+        const yearElement = document.getElementById('year');
+        if (yearElement) {
+            yearElement.textContent = new Date().getFullYear();
+        }
+    } catch (error) {
+        console.error('Error loading footer:', error);
+    }
+}
 
 // Modal Functions
 function openModal(title, message) {
@@ -80,8 +95,12 @@ function toggleLanguage() {
         });
         body.classList.add('rtl');
         currentLang = 'ar';
-        currentTitle.innerHTML = currentTitle.getAttribute('data-lang-ar');
-        langButton.innerText = 'AR / EN';
+        if (currentTitle && currentTitle.getAttribute('data-lang-ar')) {
+            currentTitle.innerHTML = currentTitle.getAttribute('data-lang-ar');
+        }
+        if (langButton) {
+            langButton.innerText = 'AR / EN';
+        }
     } else {
         langElements.forEach(el => {
             if (el.tagName === 'SELECT') {
@@ -96,20 +115,24 @@ function toggleLanguage() {
         });
         body.classList.remove('rtl');
         currentLang = 'en';
-        currentTitle.innerHTML = currentTitle.getAttribute('data-lang-en');
-        langButton.innerText = 'EN / AR';
+        if (currentTitle && currentTitle.getAttribute('data-lang-en')) {
+            currentTitle.innerHTML = currentTitle.getAttribute('data-lang-en');
+        }
+        if (langButton) {
+            langButton.innerText = 'EN / AR';
+        }
     }
 }
 
-// Update year automatically
-document.getElementById('year').textContent = new Date().getFullYear();
-
 // Search handler: Filter cards based on selected service
 function performSearch() {
-    const service = document.getElementById('service').value || '';
+    const service = document.getElementById('service')?.value || '';
     const cards = document.querySelectorAll('.card');
+    const servicesSection = document.getElementById('services');
 
-    document.getElementById('services').scrollIntoView({ behavior: 'smooth' });
+    if (servicesSection) {
+        servicesSection.scrollIntoView({ behavior: 'smooth' });
+    }
 
     cards.forEach((card, index) => {
         if (service === '' || card.getAttribute('data-service') === service) {
@@ -123,8 +146,12 @@ function performSearch() {
 
 // Reset search
 function resetSearch() {
-    document.getElementById('location').value = '';
-    document.getElementById('service').value = '';
+    const locationSelect = document.getElementById('location');
+    const serviceSelect = document.getElementById('service');
+    
+    if (locationSelect) locationSelect.value = '';
+    if (serviceSelect) serviceSelect.value = '';
+    
     const cards = document.querySelectorAll('.card');
     cards.forEach((card, index) => {
         card.classList.remove('hidden');
@@ -135,11 +162,17 @@ function resetSearch() {
 // Toggle menu for mobile
 function toggleMenu() {
     const navLinks = document.querySelector('.nav-links');
-    navLinks.classList.toggle('active');
+    if (navLinks) {
+        navLinks.classList.toggle('active');
+    }
 }
 
 // Intersection Observer for fade-in animations on scroll
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+    // Load footer first
+    await loadFooter();
+    
+    // Then setup observers and other functionality
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -160,12 +193,15 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(card);
     });
     
+    // Header scroll effect
     window.addEventListener('scroll', () => {
         const header = document.querySelector('header');
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
+        if (header) {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
         }
     });
 });
