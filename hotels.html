@@ -150,7 +150,6 @@
     </main>
 
 
-    
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">&times;</span>
@@ -159,13 +158,13 @@
         </div>
     </div>
     <div id="galleryModal" class="modal">
-        <div class="modal-content gallery-content">
-            <span class="close-btn" onclick="closeGallery()">&times;</span>
+        <div class="modal-content gallery-modal-content">
+            <span class="close-btn" onclick="closeGalleryModal()">&times;</span>
             <h3 id="gallery-title"></h3>
-            <div class="gallery-container">
-                <div class="gallery-inner"></div>
-                <button class="prev" onclick="prevImage()">&#10094;</button>
-                <button class="next" onclick="nextImage()">&#10095;</button>
+            <div class="gallery-nav">
+                <button class="nav-btn prev" onclick="prevImage()">&lt;</button>
+                <div id="gallery-images" class="gallery-images"></div>
+                <button class="nav-btn next" onclick="nextImage()">&gt;</button>
             </div>
         </div>
     </div>
