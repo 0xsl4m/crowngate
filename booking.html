@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-lang-en="Book Now - CrownGate" data-lang-ar="احجز الآن - كراون جيت">Book Now - CrownGate</title>
+  <meta name="description" content="Book luxury concierge services in Egypt with CrownGate: hotels, chalets, cars, and guided tours.">
+  <meta name="keywords" content="Egypt concierge booking, North Coast chalets, Cairo hotels, guided tours">
+  <meta property="og:title" content="Book Now - CrownGate">
+  <meta property="og:description" content="Book luxury concierge services in Egypt with CrownGate: hotels, chalets, cars, and guided tours.">
+  <meta property="og:image" content="https://crowngate-egyconcierge.vercel.app/images/preview1.jpg">
+  <meta property="og:url" content="https://crowngate-egyconcierge.vercel.app/booking.html">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="https://crowngate-egyconcierge.vercel.app/images/favicon1.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Book Now - CrownGate",
+    "description": "Book luxury concierge services in Egypt with CrownGate: hotels, chalets, cars, and guided tours."
+  }
+  </script>
+</head>
+<body>
+    <header>
+        <div class="container nav">
+            <a class="brand" href="index.html" aria-label="CrownGate Home">
+                <img src="images/logo.png" alt="CrownGate logo" />
+            </a>
+            <button class="hamburger" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="nav-links" aria-label="primary">
+                <a href="index.html#services" data-lang-en="Services" data-lang-ar="خدماتنا">Services</a>
+                <a href="booking.html" data-lang-en="Book Now" data-lang-ar="احجز الآن">Book Now</a>
+                <a href="index.html#footer" data-lang-en="Support" data-lang-ar="دعم">Support</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="btn lang-toggle" onclick="toggleLanguage()">EN / AR</button>
+            </div>
+        </div>
+    </header>
+  <main class="booking-section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow" data-lang-en="Book Your Experience" data-lang-ar="احجز تجربتك">Book Your Experience</div>
+        <h2 class="section-title" data-lang-en="Reserve Your Concierge Services" data-lang-ar="احجز خدمات الكونسيرج">Reserve Your Concierge Services</h2>
+        <p class="section-sub" data-lang-en="Fill out the form to book hotels, chalets, cars, or tours in Egypt." data-lang-ar="املأ النموذج لحجز فنادق، شاليهات، سيارات، أو جولات سياحية في مصر.">Fill out the form to book hotels, chalets, cars, or tours in Egypt.</p>
+      </div>
+      <form id="booking-form" onsubmit="event.preventDefault(); validateAndSendToWhatsApp(this)">
+        <input type="text" name="name" data-lang-en-placeholder="Full Name" data-lang-ar-placeholder="الاسم الكامل" placeholder="Full Name" required aria-label="Full Name">
+        <input type="tel" name="phone" data-lang-en-placeholder="Phone Number" data-lang-ar-placeholder="رقم الهاتف" placeholder="Phone Number" required aria-label="Phone Number" pattern="\+?[0-9]{10,15}">
+        <input type="email" name="email" data-lang-en-placeholder="Email Address" data-lang-ar-placeholder="البريد الإلكتروني" placeholder="Email Address" required aria-label="Email Address">
+        <input type="text" name="country" data-lang-en-placeholder="Country" data-lang-ar-placeholder="البلد" placeholder="Country" required aria-label="Country">
+        <label data-lang-en="Choose Service" data-lang-ar="اختر الخدمات">Choose Service:</label>
+        <div class="service-options">
+          <label><input type="checkbox" name="services[]" value="car" data-lang-en="Car Rental" data-lang-ar="تأجير السيارات">تأجير السيارات</label>
+          <label><input type="checkbox" name="services[]" value="villa"> شاليهات</label>
+          <label><input type="checkbox" name="services[]" value="apartment"> شقق فندقية</label>
+          <label><input type="checkbox" name="services[]" value="hotel"> حجز فنادق</label>
+          <label><input type="checkbox" name="services[]" value="golf"> تأجير جولف كار</label>
+          <label><input type="checkbox" name="services[]" value="airport"> استقبال مطار</label>
+          <label><input type="checkbox" name="services[]" value="tour"> جولات سياحية</label>
+        </div>
+        <input type="date" name="arrival" data-lang-en-placeholder="Expected Arrival Date" data-lang-ar-placeholder="تاريخ الوصول المتوقع" aria-label="Expected Arrival Date">
+        <input type="date" name="departure" data-lang-en-placeholder="Expected Departure Date" data-lang-ar-placeholder="تاريخ المغادرة المتوقع" aria-label="Expected Departure Date">
+        <textarea name="details" data-lang-en-placeholder="Any Additional Details" data-lang-ar-placeholder="أي تفاصيل إضافية" placeholder="Any Additional Details" aria-label="Additional Details"></textarea>
+        <button type="submit" class="btn btn-gold" data-lang-en="Submit Booking" data-lang-ar="إرسال الحجز">Submit Booking</button>
+      </form>
+    </div>
+  </main>
+  <script src="script.js" defer></script>
+</body>
+</html>

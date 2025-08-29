@@ -4,9 +4,64 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title data-lang-en="CrownGate - Car Rental" data-lang-ar="كرون جيت - تأجير سيارات">CrownGate - Car Rental</title>
+
+    <!-- Enhanced SEO Description -->
+    <meta name="description" content="CrownGate offers luxury car rental services in Egypt with premium models like Range Rover, Mercedes S-Class, and more. Perfect for Gulf visitors seeking comfort and style.">
+
+    <!-- Enhanced Keywords for Car Rental -->
+    <meta name="keywords" content="luxury car rental Egypt, car hire Egypt, Range Rover rental, Mercedes S-Class Egypt, SUV rental Egypt, sedan rental Egypt, car rental for Gulf visitors, Egypt car hire for UAE, Saudi, Kuwait, Qatar travelers">
+
+    <!-- Open Graph for Social Media (Default to English) -->
+    <meta property="og:site_name" content="CrownGate Egypt Concierge">
+    <meta property="og:title" content="CrownGate - Luxury Car Rental in Egypt">
+    <meta property="og:description" content="Explore our premium car rental fleet in Egypt, including Range Rover, Mercedes S-Class, and SUVs. Ideal for Gulf visitors from UAE, Saudi, Kuwait, and Qatar.">
+    <meta property="og:image" content="https://crowngate-egyconcierge.vercel.app/images/cars/range-rover.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://crowngate-egyconcierge.vercel.app/cars.html">
+    <meta property="og:type" content="product">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@CrownGateEgypt">
+    <meta name="twitter:title" content="CrownGate - Luxury Car Rental in Egypt">
+    <meta name="twitter:description" content="Premium car rentals in Egypt with models like Range Rover and Mercedes S-Class for Gulf travelers.">
+    <meta name="twitter:image" content="https://crowngate-egyconcierge.vercel.app/images/cars/range-rover.jpg">
+
+    <!-- Language Alternates with Hash for Dynamic Switch -->
+    <link rel="alternate" hreflang="en" href="https://crowngate-egyconcierge.vercel.app/cars.html#en" />
+    <link rel="alternate" hreflang="ar" href="https://crowngate-egyconcierge.vercel.app/cars.html#ar" />
+
+    <!-- Structured Data - JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "CrownGate Luxury Car Rental",
+      "description": "Premium car rental services in Egypt featuring luxury models like Range Rover, Mercedes S-Class, and SUVs.",
+      "url": "https://crowngate-egyconcierge.vercel.app/cars.html",
+      "image": "https://crowngate-egyconcierge.vercel.app/images/cars/range-rover.jpg",
+      "brand": {
+        "@type": "Brand",
+        "name": "CrownGate Egypt Concierge"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "EGP",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+    </script>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,15 +75,11 @@
             </button>
             <nav class="nav-links" aria-label="primary">
                 <a href="index.html#services" data-lang-en="Services" data-lang-ar="خدماتنا">Services</a>
-                <!--<a href="#" onclick="event.preventDefault(); openModal('Trips', 'Trips coming soon');" data-lang-en="Trips" data-lang-ar="رحلات">Trips</a>-->
-                <!--<a href="index.html#footer" data-lang-en="About" data-lang-ar="عن الشركة">About</a> -->
+                <a href="booking.html" data-lang-en="Book Now" data-lang-ar="احجز الآن">Book Now</a>
                 <a href="index.html#footer" data-lang-en="Support" data-lang-ar="دعم">Support</a>
             </nav>
             <div class="nav-actions">
                 <button class="btn lang-toggle" onclick="toggleLanguage()">EN / AR</button>
-                <!--<button class="btn btn-gold" onclick="openModal('Sign In', 'Sign In coming soon')" data-lang-en="Sign In" data-lang-ar="تسجيل الدخول">Sign In</button>
-                <button class="btn btn-gold" onclick="openModal('Sign Up', 'Sign Up coming soon')" data-lang-en="Sign Up" data-lang-ar="التسجيل">Sign Up</button>
-                --> 
             </div>
         </div>
     </header>
@@ -50,7 +101,7 @@
 
                 <div class="car-cards">
                     <div class="car-card">
-                        <img src="images/cars/range-rover.jpg" alt="Range Rover">
+                        <img src="images/cars/range-rover.jpg" alt="Range Rover" loading="lazy">
                         <div class="card-body">
                             <h3 data-lang-en="Range Rover" data-lang-ar="رانج روفر">Range Rover</h3>
                             <p data-lang-en="Unmatched luxury and power for a commanding presence on any road." data-lang-ar="فخامة وقوة لا تضاهى لتجربة قيادة فريدة على أي طريق.">Unmatched luxury and power for a commanding presence on any road.</p>
@@ -63,7 +114,7 @@
                         </div>
                     </div>
                     <div class="car-card">
-                        <img src="images/cars/s-class.jpg" alt="Mercedes S-Class">
+                        <img src="images/cars/s-class.jpg" alt="Mercedes S-Class" loading="lazy">
                         <div class="card-body">
                             <h3 data-lang-en="Mercedes S-Class" data-lang-ar="مرسيدس S-Class">Mercedes S-Class</h3>
                             <p data-lang-en="The epitome of automotive luxury, offering supreme comfort and advanced technology." data-lang-ar="قمة الفخامة في عالم السيارات، توفر راحة فائقة وتكنولوجيا متطورة.">The epitome of automotive luxury, offering supreme comfort and advanced technology.</p>
@@ -76,7 +127,7 @@
                         </div>
                     </div>
                     <div class="car-card">
-                        <img src="images/cars/e-class.jpg" alt="Mercedes E-Class 200">
+                        <img src="images/cars/e-class.jpg" alt="Mercedes E-Class 200" loading="lazy">
                         <div class="card-body">
                             <h3 data-lang-en="Mercedes E-Class 200" data-lang-ar="مرسيدس E-Class 200">Mercedes E-Class 200</h3>
                             <p data-lang-en="A perfect blend of executive style, performance, and everyday comfort." data-lang-ar="مزيج مثالي بين الأناقة والأداء والراحة اليومية.">A perfect blend of executive style, performance, and everyday comfort.</p>
@@ -89,7 +140,7 @@
                         </div>
                     </div>
                     <div class="car-card">
-                        <img src="images/cars/suv.jpg" alt="SUV Cars">
+                        <img src="images/cars/suv.jpg" alt="SUV Cars" loading="lazy">
                         <div class="card-body">
                             <h3 data-lang-en="SUV Cars" data-lang-ar="سيارات الدفع الرباعي">SUV Cars</h3>
                             <p data-lang-en="Perfect for family trips and adventures, our SUVs include models like Sportage, Tucson, Geely, and Xpander." data-lang-ar="مثالية للرحلات العائلية والمغامرات، تشمل سيارات الدفع الرباعي سبورتاج، توسان، جيتور، واكسبندر.">Perfect for family trips and adventures, our SUVs include models like Sportage, Tucson, Geely, and Xpander.</p>
@@ -102,7 +153,7 @@
                         </div>
                     </div>
                     <div class="car-card">
-                        <img src="images/cars/sedan.jpg" alt="Sedan Cars">
+                        <img src="images/cars/sedan.jpg" alt="Sedan Cars" loading="lazy">
                         <div class="card-body">
                             <h3 data-lang-en="Sedan Cars" data-lang-ar="سيارات سيدان">Sedan Cars</h3>
                             <p data-lang-en="Efficient and elegant, our sedan fleet features popular models such as Toyota Corolla, Elantra, and Cerato." data-lang-ar="سيارات عملية وأنيقة، يضم أسطولنا موديلات شهيرة مثل تويوتا كورولا، إلنترا، وسيراتو.">Efficient and elegant, our sedan fleet features popular models such as Toyota Corolla, Elantra, and Cerato.</p>
@@ -115,7 +166,7 @@
                         </div>
                     </div>
                     <div class="car-card">
-                        <img src="images/cars/viano.jpg" alt="Mercedes Viano">
+                        <img src="images/cars/viano.jpg" alt="Mercedes Viano" loading="lazy">
                         <div class="card-body">
                             <h3 data-lang-en="Mercedes Viano" data-lang-ar="مرسيدس فيانو">Mercedes Viano</h3>
                             <p data-lang-en="The ultimate choice for group travel with exceptional comfort and space, perfect for family or corporate trips." data-lang-ar="الخيار الأمثل للسفر الجماعي بأقصى درجات الراحة والمساحة، مثالية للعائلات أو الوفود.">The ultimate choice for group travel with exceptional comfort and space, perfect for family or corporate trips.</p>
@@ -131,7 +182,6 @@
             </div>
         </section>
     </main>
-    
 
     <div id="modal" class="modal">
         <div class="modal-content">
@@ -144,7 +194,11 @@
         <div class="modal-content gallery-modal-content">
             <span class="close-btn" onclick="closeGalleryModal()">&times;</span>
             <h3 id="gallery-title"></h3>
-            <div id="gallery-images" class="gallery-images"></div>
+            <div class="gallery-nav">
+                <button class="nav-btn prev" onclick="prevImage()">&lt;</button>
+                <div id="gallery-images" class="gallery-images"></div>
+                <button class="nav-btn next" onclick="nextImage()">&gt;</button>
+            </div>
         </div>
     </div>
     <script src="script.js" defer></script>

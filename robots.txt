@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://crowngate-egyconcierge.vercel.app/sitemap.xml
