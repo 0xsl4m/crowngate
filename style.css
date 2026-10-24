@@ -1796,6 +1796,22 @@ html[dir="rtl"] .faq-item[open] summary::after {
   content: "\2212";
 }
 
+/* Arabic needs more leading for diacritics (shadda, etc.) */
+html[lang="ar"] h1 {
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+html[lang="ar"] .hero-copy h1 {
+  font-size: clamp(40px, 5.6vw, 76px);
+}
+
+html[lang="ar"] h2,
+html[lang="ar"] h3 {
+  line-height: 1.18;
+  letter-spacing: 0;
+}
+
 /* Responsive --------------------------------------------- */
 
 @media (max-width: 1080px) {

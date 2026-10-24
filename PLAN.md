@@ -162,3 +162,4 @@ Legend: `[ ]` not started · `[~]` in progress · `[x]` done & verified
 | 2026-10-24 | 7 | Manual responsive/functional QA complete; local Lighthouse 84/100/100/100 |
 | 2026-10-24 | — | Deleted `hotels.html` and `chalets.html` |
 | 2026-10-24 | — | Committed 5ed0183, pushed to GitHub, deployed to Vercel; live 87/100/100/100 |
+| 2026-10-24 | — | Arabic heading leading fixed (shadda overlap); cars copy now chauffeur-only |

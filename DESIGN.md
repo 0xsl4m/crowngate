@@ -6,7 +6,7 @@ Scope: crown-gate static site (EN/AR)
 
 ## 1. Brand core
 
-**What CrownGate is:** a private concierge for travellers coming to Egypt. One point of contact arranges airport meet & assist, private cars, North Coast golf carts, and guided days in Cairo.
+**What CrownGate is:** a private concierge for travellers coming to Egypt. One point of contact arranges airport meet & assist, private cars with drivers, North Coast golf carts, and guided days in Cairo.
 
 **What it is not:** a marketplace, a comparison engine, or a hotel booking platform. Never show partner companies, supplier logos, “compare” language, or inventory grids that read like an OTA.
 
@@ -16,7 +16,7 @@ Scope: crown-gate static site (EN/AR)
 
 **Voice:** calm, specific, personal. Short sentences. No hype words (“seamless”, “elevate”, “unlock”, “premium offerings”). Say what happens, where, and when.
 
-**Current scope (do not overpromise):** Cairo & Giza tours · North Coast golf carts · private cars · Cairo airport meet & assist. Do not advertise Alexandria, Sharm, Hurghada, Luxor or Aswan until they are actually offered.
+**Current scope (do not overpromise):** Cairo & Giza tours · North Coast golf carts · private cars with drivers · Cairo airport meet & assist. Do not advertise Alexandria, Sharm, Hurghada, Luxor or Aswan until they are actually offered.
 
 ## 2. Visual direction
 
@@ -103,7 +103,7 @@ Rules: no purple gradients. No gradient-filled headline text. Gold is an accent,
 ## 6. Content rules
 
 - Hero: “Egypt, arranged before you land.”
-- Sub: airport meet & assist, private cars, North Coast golf carts, guided days in Cairo — one WhatsApp thread.
+- Sub: airport meet & assist, private cars with drivers, North Coast golf carts, guided days in Cairo — one WhatsApp thread.
 - No invented statistics (“200+ clients”, “5-star rated”). No invented reviews.
 - No partner names. No “we compare”. No “book instantly”.
 - Prices only where they are real (airport packages). Otherwise “on request”.
