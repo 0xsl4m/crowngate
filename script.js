@@ -1,358 +1,519 @@
-// Load Footer
-async function loadFooter() {
-  const spinner = document.createElement('div');
-  spinner.className = 'spinner';
-  spinner.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
-  document.body.appendChild(spinner);
-  try {
-    const response = await fetch('footer.html');
-    const footerHTML = await response.text();
-    document.body.insertAdjacentHTML('beforeend', footerHTML);
-    
-    applyLanguage();  // Apply language to the newly loaded footer
-    
-    // Update year after footer is loaded
-    const yearElement = document.getElementById('year');
-    if (yearElement) {
-      yearElement.textContent = new Date().getFullYear();
+/* =========================================================
+   CrownGate — site behaviour
+   No URL hash writes. No page-wide H1 overrides.
+   ========================================================= */
+
+(function () {
+  "use strict";
+
+  const WA_NUMBER = "201004717276";
+  const LANG_KEY = "cg-lang";
+  const $ = (selector, scope = document) => scope.querySelector(selector);
+  const $$ = (selector, scope = document) => Array.from(scope.querySelectorAll(selector));
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  let currentLang = "en";
+  let lastGalleryTrigger = null;
+  let galleryImages = [];
+  let galleryIndex = 0;
+
+  function waLink(message) {
+    const base = `https://wa.me/${WA_NUMBER}`;
+    return message ? `${base}?text=${encodeURIComponent(message)}` : base;
+  }
+
+  function whatsappMessage(lines) {
+    return lines.filter(Boolean).join("\n");
+  }
+
+  function openWhatsApp(message) {
+    const url = waLink(message);
+    const opened = window.open(url, "_blank", "noopener");
+    return { url, opened: Boolean(opened) };
+  }
+
+  /* Language ------------------------------------------------ */
+
+  function storedLang() {
+    return localStorage.getItem(LANG_KEY) || localStorage.getItem("lang") || "en";
+  }
+
+  function applyLanguage(lang, persist = true) {
+    currentLang = lang === "ar" ? "ar" : "en";
+
+    if (persist) {
+      localStorage.setItem(LANG_KEY, currentLang);
+      localStorage.setItem("lang", currentLang);
     }
-    document.body.removeChild(spinner);
-  } catch (error) {
-    console.error('Error loading footer:', error);
-    document.body.removeChild(spinner);
-  }
-}
 
-// Modal Functions
-function openModal(title, message) {
-  const modalTitle = document.getElementById('modal-title');
-  const modalMessage = document.getElementById('modal-message');
-  const modal = document.getElementById('modal');
-  if (modalTitle && modalMessage && modal) {
-    modalTitle.innerText = title;
-    modalMessage.innerText = message;
-    modal.style.display = 'block';
-  }
-}
+    document.documentElement.lang = currentLang;
+    document.documentElement.dir = currentLang === "ar" ? "rtl" : "ltr";
+    document.body.classList.toggle("rtl", currentLang === "ar");
 
-function closeModal() {
-  const modal = document.getElementById('modal');
-  if (modal) {
-    modal.style.display = 'none';
-  }
-}
+    $$("[data-lang-en]").forEach((el) => {
+      const value = el.getAttribute(`data-lang-${currentLang}`);
+      if (!value) return;
 
-// Image Gallery Modal Functions
-function showGallery(title, images) {
-  const galleryTitle = document.getElementById('gallery-title');
-  const galleryImagesContainer = document.getElementById('gallery-images');
-  const galleryModal = document.getElementById('galleryModal');
-  
-  if (galleryModal) {
-    galleryTitle.innerText = title;
-    galleryImagesContainer.innerHTML = '';
-    currentImages = images;
-    currentImageIndex = 0;
-    const img = document.createElement('img');
-    img.src = currentImages[currentImageIndex];
-    img.alt = title + ' image';
-    galleryImagesContainer.appendChild(img);
-    galleryModal.style.display = 'block';
-  }
-}
-
-function closeGalleryModal() {
-  const galleryModal = document.getElementById('galleryModal');
-  if (galleryModal) {
-    galleryModal.style.display = 'none';
-  }
-}
-
-// Close modal when clicking outside of it
-window.onclick = function(event) {
-  const modal = document.getElementById('modal');
-  const galleryModal = document.getElementById('galleryModal');
-  if (modal && event.target === modal) {
-    closeModal();
-  }
-  if (galleryModal && event.target === galleryModal) {
-    closeGalleryModal();
-  }
-}
-
-// Language Handling
-let currentLang = 'en';
-
-function applyLanguage() {
-  const langElements = document.querySelectorAll('[data-lang-en]');
-  const placeholderElements = document.querySelectorAll('[data-lang-en-placeholder]');
-  const body = document.body;
-  const currentTitle = document.querySelector('title');
-  
-  langElements.forEach(el => {
-    if (el.tagName === 'SELECT') {
-      Array.from(el.options).forEach(option => {
-        if (currentLang === 'ar' && option.getAttribute('data-lang-ar')) {
-          option.text = option.getAttribute('data-lang-ar');
-        } else if (option.getAttribute('data-lang-en')) {
-          option.text = option.getAttribute('data-lang-en');
-        }
-      });
-    } else if (el.tagName === 'H1' && el.hasAttribute('data-lang-en') && el.hasAttribute('data-lang-ar')) {
-      if (currentLang === 'ar') {
-        el.innerHTML = `استمتع بمصر <span class="accent">كالملوك</span>`;
+      if (el.hasAttribute("data-lang-html")) {
+        el.innerHTML = value;
+      } else if (el.tagName === "OPTION" || el.tagName === "TITLE") {
+        el.textContent = value;
+      } else if (el.tagName === "META") {
+        el.setAttribute("content", value);
+      } else if (el.tagName === "INPUT" || el.tagName === "TEXTAREA" || el.tagName === "SELECT") {
+        return;
       } else {
-        el.innerHTML = `Experience Egypt <span class="accent">Like Royalty</span>`;
-      }
-    } else if (currentLang === 'ar' && el.getAttribute('data-lang-ar')) {
-      el.innerHTML = el.getAttribute('data-lang-ar');
-    } else if (el.getAttribute('data-lang-en')) {
-      el.innerHTML = el.getAttribute('data-lang-en');
-    }
-  });
-
-  placeholderElements.forEach(el => {
-    if (currentLang === 'ar' && el.getAttribute('data-lang-ar-placeholder')) {
-      el.placeholder = el.getAttribute('data-lang-ar-placeholder');
-    } else if (el.getAttribute('data-lang-en-placeholder')) {
-      el.placeholder = el.getAttribute('data-lang-en-placeholder');
-    }
-  });
-
-  if (currentLang === 'ar') {
-    body.classList.add('rtl');
-    if (currentTitle && currentTitle.getAttribute('data-lang-ar')) {
-      currentTitle.innerHTML = currentTitle.getAttribute('data-lang-ar');
-    }
-    window.location.hash = 'ar';
-  } else {
-    body.classList.remove('rtl');
-    if (currentTitle && currentTitle.getAttribute('data-lang-en')) {
-      currentTitle.innerHTML = currentTitle.getAttribute('data-lang-en');
-    }
-    window.location.hash = 'en';
-  }
-}
-
-function toggleLanguage() {
-  const langButton = document.querySelector('.lang-toggle');
-  
-  if (currentLang === 'en') {
-    currentLang = 'ar';
-    if (langButton) {
-      langButton.innerText = 'AR / EN';
-    }
-  } else {
-    currentLang = 'en';
-    if (langButton) {
-      langButton.innerText = 'EN / AR';
-    }
-  }
-  applyLanguage();
-  localStorage.setItem('lang', currentLang);
-}
-
-// Form Validation and WhatsApp Submission
-function validateAndSendToWhatsApp(form) {
-  const email = form.email.value;
-  const phone = form.phone.value;
-  // جمع الخدمات المختارة من الـ checkboxes
-  const services = Array.from(form.querySelectorAll('input[name="services[]"]:checked')).map(input => 
-    currentLang === 'ar' && input.parentElement.getAttribute('data-lang-ar') 
-      ? input.parentElement.getAttribute('data-lang-ar') 
-      : input.parentElement.getAttribute('data-lang-en') || input.value
-  );
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const phoneRegex = /^\+?[0-9]{10,15}$/;
-
-  if (!emailRegex.test(email)) {
-    openModal(currentLang === 'ar' ? 'خطأ' : 'Error', currentLang === 'ar' ? 'الرجاء إدخال بريد إلكتروني صالح' : 'Please enter a valid email address');
-    return;
-  }
-  if (!phoneRegex.test(phone)) {
-    openModal(currentLang === 'ar' ? 'خطأ' : 'Error', currentLang === 'ar' ? 'الرجاء إدخال رقم هاتف صالح' : 'Please enter a valid phone number');
-    return;
-  }
-  if (services.length === 0) {
-    openModal(currentLang === 'ar' ? 'خطأ' : 'Error', currentLang === 'ar' ? 'الرجاء اختيار خدمة واحدة على الأقل' : 'Please select at least one service');
-    return;
-  }
-
-  const message = `
-    Booking Request from CrownGate:
-    Name: ${form.name.value}
-    Phone: ${phone}
-    Email: ${email}
-    Country: ${form.country.value}
-    Services: ${services.join(', ')}
-    Arrival: ${form.arrival.value || 'Not specified'}
-    Departure: ${form.departure.value || 'Not specified'}
-    Details: ${form.details.value || 'None'}
-  `;
-  const encodedMessage = encodeURIComponent(message);
-  const whatsappUrl = `https://wa.me/+201004717276?text=${encodedMessage}`;
-  window.open(whatsappUrl, '_blank');
-
-  openModal(
-    currentLang === 'ar' ? 'تم الإرسال' : 'Submitted',
-    currentLang === 'ar' ? 'تم إرسال طلبك! سنتواصل معك عبر واتساب.' : 'Your request has been sent! We will contact you via WhatsApp.'
-  );
-  form.reset();
-}
-
-// Search handler: Filter cards based on selected service
-function performSearch() {
-  const service = document.getElementById('service')?.value || '';
-  const cards = document.querySelectorAll('.card');
-  const servicesSection = document.getElementById('services');
-
-  if (servicesSection) {
-    servicesSection.scrollIntoView({ behavior: 'smooth' });
-  }
-
-  cards.forEach((card, index) => {
-    if (service === '' || card.getAttribute('data-service') === service) {
-      card.classList.remove('hidden');
-      card.style.setProperty('--index', index);
-    } else {
-      card.classList.add('hidden');
-    }
-  });
-}
-
-// Reset search
-function resetSearch() {
-  const locationSelect = document.getElementById('location');
-  const serviceSelect = document.getElementById('service');
-  
-  if (locationSelect) locationSelect.value = '';
-  if (serviceSelect) serviceSelect.value = '';
-  
-  const cards = document.querySelectorAll('.card');
-  cards.forEach((card, index) => {
-    card.classList.remove('hidden');
-    card.style.setProperty('--index', index);
-  });
-}
-
-// Toggle menu for mobile
-function toggleMenu() {
-  const navLinks = document.querySelector('.nav-links');
-  const hamburger = document.querySelector('.hamburger');
-  if (navLinks && hamburger) {
-    navLinks.classList.toggle('active');
-    hamburger.classList.toggle('active');
-    const isExpanded = navLinks.classList.contains('active');
-    hamburger.setAttribute('aria-expanded', isExpanded);
-    if (isExpanded) {
-      document.addEventListener('click', closeMenuOnOutsideClick);
-    } else {
-      document.removeEventListener('click', closeMenuOnOutsideClick);
-    }
-  }
-}
-
-function closeMenuOnOutsideClick(event) {
-  const navLinks = document.querySelector('.nav-links');
-  if (!navLinks.contains(event.target) && !event.target.classList.contains('hamburger') && !event.target.closest('.hamburger')) {
-    navLinks.classList.remove('active');
-    document.querySelector('.hamburger').classList.remove('active');
-    document.querySelector('.hamburger').setAttribute('aria-expanded', 'false');
-    document.removeEventListener('click', closeMenuOnOutsideClick);
-  }
-}
-
-// Intersection Observer for fade-in animations on scroll
-document.addEventListener('DOMContentLoaded', async () => {
-  // Load footer first
-  const savedLang = localStorage.getItem('lang');
-  if (savedLang) {
-    currentLang = savedLang;
-    applyLanguage();  // Apply saved language on page load
-  }
-  await loadFooter();
-  
-  // Then setup observers and other functionality
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
+        el.textContent = value;
       }
     });
-  }, { threshold: 0.1 });
 
-  const sectionHeads = document.querySelectorAll('.section-head');
-  sectionHeads.forEach((head, index) => {
-    observer.observe(head);
-  });
+    $$("[data-lang-en-placeholder]").forEach((el) => {
+      const value = el.getAttribute(`data-lang-${currentLang}-placeholder`);
+      if (value) el.setAttribute("placeholder", value);
+    });
 
-  const cards = document.querySelectorAll('.card');
-  cards.forEach((card, index) => {
-    card.style.setProperty('--index', index);
-    observer.observe(card);
-  });
+    $$("[data-lang-set]").forEach((el) => {
+      el.classList.toggle("is-active", el.getAttribute("data-lang-set") === currentLang);
+    });
 
-  const carCards = document.querySelectorAll('.car-card');
-  carCards.forEach((card, index) => {
-    card.style.setProperty('--index', index);
-    observer.observe(card);
-  });
-  
-  // Header scroll effect
-  window.addEventListener('scroll', () => {
-    const header = document.querySelector('header');
-    if (header) {
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
+    const title = document.querySelector("title[data-lang-en]");
+    if (title) document.title = title.textContent;
+  }
+
+  function toggleLanguage() {
+    applyLanguage(currentLang === "en" ? "ar" : "en");
+  }
+
+  /* Header / menu ------------------------------------------- */
+
+  function initHeader() {
+    const header = $(".site-header");
+    if (!header) return;
+
+    if (!$(".hero") && !$(".page-hero")) header.classList.add("is-solid");
+
+    const onScroll = () => {
+      header.classList.toggle("is-scrolled", window.scrollY > 24);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    const nav = $("#primaryNav");
+    const toggle = $("#menuToggle");
+    if (!nav || !toggle) return;
+
+    const closeMenu = () => {
+      nav.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("menu-open");
+    };
+
+    toggle.addEventListener("click", () => {
+      const willOpen = !nav.classList.contains("is-open");
+      nav.classList.toggle("is-open", willOpen);
+      toggle.setAttribute("aria-expanded", String(willOpen));
+      document.body.classList.toggle("menu-open", willOpen);
+    });
+
+    nav.addEventListener("click", (event) => {
+      if (event.target.closest("a")) closeMenu();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeMenu();
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!nav.classList.contains("is-open")) return;
+      if (nav.contains(event.target) || toggle.contains(event.target)) return;
+      closeMenu();
+    });
+  }
+
+  /* Reveal on scroll --------------------------------------- */
+
+  function initReveal() {
+    const items = $$(".reveal");
+    if (!items.length) return;
+
+    if (reducedMotion || !("IntersectionObserver" in window)) {
+      items.forEach((el) => el.classList.add("is-visible"));
+      return;
     }
-  });
-});
 
-let currentImageIndex = 0;
-let currentImages = [];
+    let fired = false;
 
-function showGallery(title, images) {
-  const galleryTitle = document.getElementById('gallery-title');
-  const galleryImagesContainer = document.getElementById('gallery-images');
-  const galleryModal = document.getElementById('galleryModal');
-  if (galleryModal) {
-    galleryTitle.innerText = title;
-    galleryImagesContainer.innerHTML = '';
-    currentImages = images;
-    currentImageIndex = 0;
-    const img = document.createElement('img');
-    img.src = currentImages[currentImageIndex];
-    img.alt = title + ' image';
-    galleryImagesContainer.appendChild(img);
-    galleryModal.style.display = 'block';
+    const observer = new IntersectionObserver(
+      (entries) => {
+        fired = true;
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+    );
+
+    items.forEach((el) => observer.observe(el));
+
+    // Fail-safe: if the rendering pipeline is paused (background/occluded tab),
+    // reveal everything rather than leaving content invisible.
+    setTimeout(() => {
+      if (fired) return;
+      observer.disconnect();
+      items.forEach((el) => el.classList.add("is-visible"));
+    }, 2500);
   }
-}
 
-function prevImage() {
-  if (currentImageIndex > 0) {
-    currentImageIndex--;
-    updateGalleryImage();
-  }
-}
+  /* Quick request (hero) ----------------------------------- */
 
-function nextImage() {
-  if (currentImageIndex < currentImages.length - 1) {
-    currentImageIndex++;
-    updateGalleryImage();
-  }
-}
+  function initQuickRequest() {
+    const form = $("#quickRequest");
+    if (!form) return;
 
-function updateGalleryImage() {
-  const galleryImagesContainer = document.getElementById('gallery-images');
-  if (galleryImagesContainer) {
-    galleryImagesContainer.innerHTML = '';
-    const img = document.createElement('img');
-    img.src = currentImages[currentImageIndex];
-    img.alt = document.getElementById('gallery-title').innerText + ' image';
-    galleryImagesContainer.appendChild(img);
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+
+      const service = form.elements.service;
+      const date = form.elements.date.value;
+      const travellers = form.elements.travellers.value;
+      const notes = form.elements.notes.value.trim();
+      const serviceLabel = service.selectedOptions[0]
+        ? service.selectedOptions[0].textContent.trim()
+        : service.value;
+
+      const message =
+        currentLang === "ar"
+          ? whatsappMessage([
+              "مرحبًا كراون جيت، أرغب في ترتيب:",
+              `الخدمة: ${serviceLabel}`,
+              date ? `التاريخ: ${date}` : "",
+              travellers ? `عدد الأفراد: ${travellers}` : "",
+              notes ? `ملاحظات: ${notes}` : "",
+            ])
+          : whatsappMessage([
+              "Hello CrownGate, I would like to arrange:",
+              `Service: ${serviceLabel}`,
+              date ? `Date: ${date}` : "",
+              travellers ? `Travellers: ${travellers}` : "",
+              notes ? `Notes: ${notes}` : "",
+            ]);
+
+      openWhatsApp(message);
+    });
   }
-}
+
+  /* Booking form ------------------------------------------- */
+
+  function initBookingForm() {
+    const form = $("#bookingForm");
+    if (!form) return;
+
+    const errorBox = $("#formErrors");
+    const note = $("#formNote");
+    const phoneRegex = /^\+?[0-9][0-9\s\-()]{7,18}$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    function showErrors(messages) {
+      if (!errorBox) return;
+      errorBox.innerHTML = "";
+      if (!messages.length) {
+        errorBox.classList.remove("is-visible");
+        return;
+      }
+      const list = document.createElement("ul");
+      list.style.margin = "0";
+      list.style.paddingInlineStart = "18px";
+      messages.forEach((message) => {
+        const item = document.createElement("li");
+        item.textContent = message;
+        list.appendChild(item);
+      });
+      errorBox.appendChild(list);
+      errorBox.classList.add("is-visible");
+      errorBox.setAttribute("role", "alert");
+    }
+
+    function validate() {
+      const messages = [];
+      const name = form.elements.name.value.trim();
+      const phone = form.elements.phone.value.trim();
+      const email = form.elements.email.value.trim();
+      const country = form.elements.country.value.trim();
+      const services = $$('input[name="services[]"]:checked', form);
+      const arrival = form.elements.arrival.value;
+      const departure = form.elements.departure.value;
+
+      if (name.length < 2) messages.push(currentLang === "ar" ? "اكتب الاسم الكامل." : "Please enter your full name.");
+      if (!phoneRegex.test(phone)) messages.push(currentLang === "ar" ? "اكتب رقم هاتف صحيح مع كود الدولة." : "Please enter a valid phone number with country code.");
+      if (!emailRegex.test(email)) messages.push(currentLang === "ar" ? "اكتب بريدًا إلكترونيًا صحيحًا." : "Please enter a valid email address.");
+      if (!country) messages.push(currentLang === "ar" ? "اكتب بلد الإقامة." : "Please enter your country.");
+      if (!services.length) messages.push(currentLang === "ar" ? "اختر خدمة واحدة على الأقل." : "Please choose at least one service.");
+      if (arrival && departure && departure < arrival) messages.push(currentLang === "ar" ? "تاريخ المغادرة يجب أن يكون بعد الوصول." : "Departure date must be after the arrival date.");
+
+      return messages;
+    }
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const messages = validate();
+      showErrors(messages);
+
+      if (messages.length) {
+        const firstInvalid = form.querySelector('[aria-invalid="true"], input, select, textarea');
+        if (firstInvalid) firstInvalid.focus();
+        return;
+      }
+
+      const services = $$('input[name="services[]"]:checked', form)
+        .map((input) => input.getAttribute(`data-label-${currentLang}`) || input.value)
+        .join(", ");
+
+      const message =
+        currentLang === "ar"
+          ? whatsappMessage([
+              "طلب جديد من كراون جيت:",
+              `الاسم: ${form.elements.name.value.trim()}`,
+              `الهاتف: ${form.elements.phone.value.trim()}`,
+              `البريد: ${form.elements.email.value.trim()}`,
+              `البلد: ${form.elements.country.value.trim()}`,
+              `الخدمات: ${services}`,
+              form.elements.arrival.value ? `الوصول: ${form.elements.arrival.value}` : "",
+              form.elements.departure.value ? `المغادرة: ${form.elements.departure.value}` : "",
+              form.elements.details.value.trim() ? `تفاصيل: ${form.elements.details.value.trim()}` : "",
+            ])
+          : whatsappMessage([
+              "New CrownGate request:",
+              `Name: ${form.elements.name.value.trim()}`,
+              `Phone: ${form.elements.phone.value.trim()}`,
+              `Email: ${form.elements.email.value.trim()}`,
+              `Country: ${form.elements.country.value.trim()}`,
+              `Services: ${services}`,
+              form.elements.arrival.value ? `Arrival: ${form.elements.arrival.value}` : "",
+              form.elements.departure.value ? `Departure: ${form.elements.departure.value}` : "",
+              form.elements.details.value.trim() ? `Details: ${form.elements.details.value.trim()}` : "",
+            ]);
+
+      const result = openWhatsApp(message);
+      if (note) {
+        note.hidden = false;
+        note.innerHTML = "";
+        const text = document.createElement("p");
+        text.className = "micro";
+        text.textContent =
+          currentLang === "ar"
+            ? "لو واتساب مافتحش، اضغط هنا: "
+            : "If WhatsApp did not open, tap here: ";
+        const link = document.createElement("a");
+        link.href = result.url;
+        link.target = "_blank";
+        link.rel = "noopener";
+        link.textContent = currentLang === "ar" ? "فتح واتساب" : "Open WhatsApp";
+        link.style.color = "var(--gold)";
+        text.appendChild(link);
+        note.appendChild(text);
+      }
+    });
+  }
+
+  /* Car filters -------------------------------------------- */
+
+  function initFilters() {
+    const chips = $$("[data-filter]");
+    if (!chips.length) return;
+    const cards = $$("[data-category]");
+
+    chips.forEach((chip) => {
+      chip.addEventListener("click", () => {
+        const filter = chip.getAttribute("data-filter");
+        chips.forEach((item) => {
+          item.classList.toggle("is-active", item === chip);
+          item.setAttribute("aria-pressed", String(item === chip));
+        });
+        cards.forEach((card) => {
+          const categories = (card.getAttribute("data-category") || "").split(/\s+/);
+          const show = filter === "all" || categories.includes(filter);
+          card.classList.toggle("is-hidden", !show);
+        });
+      });
+    });
+  }
+
+  /* Gallery ------------------------------------------------ */
+
+  function openGallery(title, images, trigger) {
+    const modal = $("#galleryModal");
+    if (!modal || !images.length) return;
+    lastGalleryTrigger = trigger || null;
+    galleryImages = images;
+    galleryIndex = 0;
+
+    const heading = $("#galleryTitle", modal);
+    if (heading) heading.textContent = title;
+
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+    renderGallery();
+
+    const close = $(".modal-close", modal);
+    if (close) close.focus();
+  }
+
+  function renderGallery() {
+    const image = $("#galleryImage");
+    const count = $("#galleryCount");
+    if (image) {
+      image.src = galleryImages[galleryIndex];
+      image.alt = "";
+    }
+    if (count) count.textContent = `${galleryIndex + 1} / ${galleryImages.length}`;
+  }
+
+  function closeGallery() {
+    const modal = $("#galleryModal");
+    if (!modal) return;
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+    if (lastGalleryTrigger) lastGalleryTrigger.focus();
+  }
+
+  function stepGallery(delta) {
+    if (!galleryImages.length) return;
+    galleryIndex = (galleryIndex + delta + galleryImages.length) % galleryImages.length;
+    renderGallery();
+  }
+
+  function initGallery() {
+    document.addEventListener("click", (event) => {
+      const trigger = event.target.closest("[data-images]");
+      if (trigger) {
+        event.preventDefault();
+        const images = (trigger.getAttribute("data-images") || "").split("|").filter(Boolean);
+        openGallery(trigger.getAttribute("data-title") || "", images, trigger);
+        return;
+      }
+
+      const modal = $("#galleryModal");
+      if (!modal || !modal.classList.contains("is-open")) return;
+
+      if (event.target.closest("[data-gallery-close]") || event.target === modal) {
+        closeGallery();
+        return;
+      }
+      if (event.target.closest("[data-gallery-prev]")) stepGallery(-1);
+      if (event.target.closest("[data-gallery-next]")) stepGallery(1);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      const modal = $("#galleryModal");
+      if (!modal || !modal.classList.contains("is-open")) return;
+      if (event.key === "Escape") closeGallery();
+      if (event.key === "ArrowLeft") stepGallery(-1);
+      if (event.key === "ArrowRight") stepGallery(1);
+      if (event.key === "Tab") {
+        const focusable = $$(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
+          modal
+        ).filter((el) => !el.disabled && el.offsetParent !== null);
+        if (!focusable.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      }
+    });
+  }
+
+  /* Service request buttons -------------------------------- */
+
+  function initRequestButtons() {
+    document.addEventListener("click", (event) => {
+      const trigger = event.target.closest("[data-request]");
+      if (!trigger) return;
+      event.preventDefault();
+
+      const item =
+        currentLang === "ar"
+          ? trigger.getAttribute("data-request-ar") || trigger.getAttribute("data-request")
+          : trigger.getAttribute("data-request");
+
+      const message =
+        currentLang === "ar"
+          ? `مرحبًا كراون جيت، أرغب في طلب ${item}.`
+          : `Hello CrownGate, I would like to request ${item}.`;
+
+      openWhatsApp(message);
+    });
+  }
+
+  /* Booking date limits ------------------------------------ */
+
+  function initDateLimits() {
+    const form = $("#bookingForm");
+    if (!form) return;
+
+    const today = new Date().toISOString().split("T")[0];
+    const arrival = form.elements.arrival;
+    const departure = form.elements.departure;
+
+    if (arrival) arrival.min = today;
+    if (departure) departure.min = today;
+
+    if (arrival && departure) {
+      arrival.addEventListener("change", () => {
+        if (arrival.value) departure.min = arrival.value;
+      });
+    }
+  }
+
+  /* Misc --------------------------------------------------- */
+
+  function initYear() {
+    const year = $("#year");
+    if (year) year.textContent = String(new Date().getFullYear());
+  }
+
+  function init() {
+    applyLanguage(storedLang(), false);
+    initHeader();
+    initReveal();
+    initQuickRequest();
+    initBookingForm();
+    initRequestButtons();
+    initDateLimits();
+    initFilters();
+    initGallery();
+    initYear();
+
+    const switchButton = $(".lang-switch");
+    if (switchButton) switchButton.addEventListener("click", toggleLanguage);
+
+    window.__cgReady = true;
+
+    // Compatibility for the dormant noindex pages that still use inline handlers.
+    window.toggleLanguage = toggleLanguage;
+    window.toggleMenu = function () {
+      const nav = $("#primaryNav");
+      const toggle = $("#menuToggle");
+      if (!nav || !toggle) return;
+      const open = !nav.classList.contains("is-open");
+      nav.classList.toggle("is-open", open);
+      toggle.setAttribute("aria-expanded", String(open));
+    };
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();

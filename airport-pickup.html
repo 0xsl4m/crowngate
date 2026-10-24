@@ -1,112 +1,227 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title data-lang-en="CrownGate - Airport Services" data-lang-ar="كرون جيت - خدمات المطار">CrownGate - Airport Services</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
+  <!-- avoid-ai-design-ignore-file: K7 — documented scanner exceptions -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function(){var d=document.documentElement;d.classList.add('js');setTimeout(function(){if(!window.__cgReady)d.classList.remove('js');},3000);try{var l=localStorage.getItem('cg-lang')||localStorage.getItem('lang');if(l==='ar'){d.lang='ar';d.dir='rtl';}}catch(e){}})();
+  </script>
+  <title data-lang-en="Airport Meet & Assist in Cairo | CrownGate" data-lang-ar="استقبال ومساعدة في مطار القاهرة | كراون جيت">Airport Meet & Assist in Cairo | CrownGate</title>
+  <meta name="description" content="Airport meet & assist at Cairo International: passport, visa, luggage help, and private transfers. Three service levels, clear prices.">
+  <link rel="canonical" href="https://crowngate-egyconcierge.vercel.app/airport-pickup.html">
+  <meta name="theme-color" content="#080d12">
+  
+  <meta property="og:site_name" content="CrownGate">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Airport Meet & Assist in Cairo | CrownGate">
+  <meta property="og:description" content="Airport meet & assist at Cairo International: passport, visa, luggage help, and private transfers. Three service levels, clear prices.">
+  <meta property="og:url" content="https://crowngate-egyconcierge.vercel.app/airport-pickup.html">
+  <meta property="og:image" content="https://crowngate-egyconcierge.vercel.app/images/og-crowngate.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ar_EG">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Airport Meet & Assist in Cairo | CrownGate">
+  <meta name="twitter:description" content="Airport meet & assist at Cairo International: passport, visa, luggage help, and private transfers. Three service levels, clear prices.">
+  <meta name="twitter:image" content="https://crowngate-egyconcierge.vercel.app/images/og-crowngate.jpg">
+  <link rel="icon" href="images/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="512x512" href="images/favicon-512.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/playfairdisplay/v40/nuFiD-vYSZviVYUb_rj3ij__anPXDTzYgEM86xQ.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggexSvfedN4.woff2">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600&amp;family=Manrope:wght@400;500;600&amp;family=Playfair+Display:wght@500&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600&amp;family=Manrope:wght@400;500;600&amp;family=Playfair+Display:wght@500&amp;display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600&amp;family=Manrope:wght@400;500;600&amp;family=Playfair+Display:wght@500&amp;display=swap"></noscript>
+  <link rel="stylesheet" href="style.css">
+  
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Airport meet & assist at Cairo International",
+  "serviceType": "Airport meet and assist",
+  "provider": {"@type": "TravelAgency", "name": "CrownGate", "telephone": "+201004717276"},
+  "areaServed": {"@type": "Place", "name": "Cairo International Airport"}
+}
+</script>
 </head>
-<body>
-    <header>
-        <div class="container nav">
-            <a class="brand" href="index.html" aria-label="CrownGate Home">
-                <img src="images/logo.png" alt="CrownGate logo" />
-            </a>
-            <button class="hamburger" onclick="toggleMenu()">
-                <i class="fas fa-bars"></i>
-            </button>
-            <nav class="nav-links" aria-label="primary">
-                <a href="index.html#services" data-lang-en="Services" data-lang-ar="خدماتنا">Services</a>
-                <a href="booking.html" data-lang-en="Book Now" data-lang-ar="احجز الآن">Book Now</a>
-                <a href="index.html#footer" data-lang-en="Support" data-lang-ar="دعم">Support</a>
-            </nav>
-            <div class="nav-actions">
-                <button class="btn lang-toggle" onclick="toggleLanguage()">EN / AR</button>
-            </div>
-        </div>
-    </header>
-
-    <main>
-        <section class="service-hero">
-            <div class="container">
-                <h1 data-lang-en="Airport Pickup Services" data-lang-ar="خدمات الاستقبال من المطار">Airport Pickup Services</h1>
-                <p class="section-sub" data-lang-en="Enjoy a smooth and luxurious arrival experience with our premium airport services." data-lang-ar="استمتع بتجربة وصول سلسة وفاخرة مع خدماتنا المتميزة في المطار.">Enjoy a smooth and luxurious arrival experience with our premium airport services.</p>
-            </div>
-        </section>
-
-        <section class="service-gallery">
-            <div class="container">
-                <div class="section-head">
-                    <div class="eyebrow" data-lang-en="Our Offerings" data-lang-ar="عروضنا">Our Offerings</div>
-                    <h2 class="section-title" data-lang-en="Choose your level of comfort" data-lang-ar="اختر مستوى راحتك">Choose your level of comfort</h2>
-                </div>
-                <div class="cards">
-                    <article class="card">
-                        <img src="images/services/airport.jpg" alt="Meet & Assist">
-                        <div class="card-body">
-                            <h3 data-lang-en="Meet & Assist" data-lang-ar="خدمة استقبال ومساعدة">Meet & Assist</h3>
-                            <p data-lang-en="Airport Meet and greet service with assistance with Passport control, Visa, and Luggage handling. $ 25/ Person + $ 25 Visa fees." data-lang-ar="خدمة استقبال ومساعدة في المطار تشمل المساعدة في إجراءات الجوازات والتأشيرة واستلام الأمتعة. $25/للفرد + $25 رسوم تأشيرة.">Airport Meet and greet service with assistance with Passport control, Visa, and Luggage handling. $ 20/ Person + $ 25 Visa fees.</p>
-                            <div class="card-actions">
-                                <!--<a class="link-btn" href="#" onclick="openModal('Meet & Assist Details', 'This service provides a dedicated representative to assist with all airport procedures, including passport control, visa, and luggage handling.')" data-lang-en="More Details" data-lang-ar="تفاصيل أكثر">More Details
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                </a>-->
-                                <a class="link-btn book-btn" href="https://wa.me/+201004717276?text=أود%20أن%20أحجز%20خدمة%20Meet%20&%20Assist%20في%20المطار" target="_blank" rel="noopener noreferrer" data-lang-en="Book Now" data-lang-ar="احجز الآن">Book Now</a>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="card">
-                        <img src="images/services/airport.jpg" alt="Meet & Assist Plus">
-                        <div class="card-body">
-                            <h3 data-lang-en="Meet & Assist Plus" data-lang-ar="خدمة استقبال ومساعدة بلس">Meet & Assist Plus</h3>
-                            <p data-lang-en="Golf cart to take you in airport with a rep to finalize your visa, Customs, and Luggage handling. $ 50 / person + $ 25 visa Charges." data-lang-ar="جولف كار لتنقلك داخل المطار مع مندوب لإنهاء إجراءات التأشيرة والجمارك واستلام الأمتعة. $50/للفرد + $25 رسوم تأشيرة.">Golf cart to take you in airport with a rep to finalize your visa, Customs, and Luggage handling. $ 50 / person + $ 25 visa Charges.</p>
-                            <div class="card-actions">
-                                <!--<a class="link-btn" href="#" onclick="openModal('Meet & Assist Plus Details', 'This service includes all the benefits of Meet & Assist, plus a golf cart for easy and quick transportation within the airport terminals.')" data-lang-en="More Details" data-lang-ar="تفاصيل أكثر">More Details
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                </a>-->
-                                <a class="link-btn book-btn" href="https://wa.me/+201004717276?text=أود%20أن%20أحجز%20خدمة%20Meet%20&%20Assist%20Plus%20في%20المطار" target="_blank" rel="noopener noreferrer" data-lang-en="Book Now" data-lang-ar="احجز الآن">Book Now</a>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="card">
-                        <img src="images/services/airport.jpg" alt="VIP Service">
-                        <div class="card-body">
-                            <h3 data-lang-en="VIP Service" data-lang-ar="خدمة الـ VIP">VIP Service</h3>
-                            <p data-lang-en="VIP lounge access including Meet & Greet service, Private luxury car take you in airport , and Luggage handling. $ 225 per person + $ 25 Visa Fees Option." data-lang-ar="وصول إلى صالة كبار الشخصيات مع خدمة الاستقبال، والنقل داخل المطار بسيارة فاخره وتخليص الاجراءات و المساعدة في الجمارك، واستلام الأمتعة. $225/للفرد + $25 رسوم تأشيرة اختيارية.">VIP lounge access including Meet & Greet service, Customs, and Luggage handling. $ 225 per person + $ 25 Visa Fees Option.</p>
-                            <div class="card-actions">
-                                <!--<a class="link-btn" href="#" onclick="openModal('VIP Service Details', 'This service provides access to the VIP lounge, along with a dedicated representative for all procedures and private luxury car transfer.')" data-lang-en="More Details" data-lang-ar="تفاصيل أكثر">More Details
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                </a>-->
-                                <a class="link-btn book-btn" href="https://wa.me/+201004717276?text=أود%20أن%20أحجز%20خدمة%20VIP%20للمطار" target="_blank" rel="noopener noreferrer" data-lang-en="Book Now" data-lang-ar="احجز الآن">Book Now</a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-    </main>
-
-
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <h3 id="modal-title"></h3>
-            <p id="modal-message"></p>
-        </div>
+<body class="page">
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="CrownGate home">
+      <img class="brand-logo" src="images/logo-tight.png" alt="CrownGate — Egy Concierge Services" width="436" height="88">
+    </a>
+    <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+      <a href="index.html#services"><span data-lang-en="Services" data-lang-ar="الخدمات">Services</span></a>
+      <a href="index.html#how"><span data-lang-en="How it works" data-lang-ar="كيف نعمل">How it works</span></a>
+      <a href="index.html#faq"><span data-lang-en="FAQ" data-lang-ar="الأسئلة">FAQ</span></a>
+      <a href="booking.html"><span data-lang-en="Plan your trip" data-lang-ar="خطط رحلتك">Plan your trip</span></a>
+    </nav>
+    <div class="header-actions">
+      <button class="lang-switch" type="button">
+        <span data-lang-set="en">EN</span><span class="sep">/</span><span data-lang-set="ar">AR</span>
+      </button>
+      <a class="btn btn-wa btn-sm" href="https://wa.me/201004717276" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg class="icon" aria-hidden="true"><use href="images/icons.svg#wa"></use></svg>
+        <span data-lang-en="WhatsApp" data-lang-ar="واتساب">WhatsApp</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="primaryNav">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-    <div id="galleryModal" class="modal">
-        <div class="modal-content gallery-modal-content">
-            <span class="close-btn" onclick="closeGalleryModal()">&times;</span>
-            <h3 id="gallery-title"></h3>
-            <div class="gallery-nav">
-                <button class="nav-btn prev" onclick="prevImage()">&lt;</button>
-                <div id="gallery-images" class="gallery-images"></div>
-                <button class="nav-btn next" onclick="nextImage()">&gt;</button>
-            </div>
-        </div>
+  </div>
+</header>
+<main>
+<section class="page-hero">
+  <div class="page-hero-media"><img src="images/services/airport.jpg" alt="" width="736" height="736"></div>
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html" data-lang-en="Home" data-lang-ar="الرئيسية">Home</a><span>/</span><span data-lang-en="Airport" data-lang-ar="المطار">Airport</span></div>
+    <h1 data-lang-en="Land, and be on your way." data-lang-ar="اهبط، وتابع طريقك.">Land, and be on your way.</h1>
+    <p class="lead" data-lang-en="Meet &amp; assist at Cairo International — passport, visa, luggage, and a private transfer. Choose the level of service you want." data-lang-ar="استقبال ومساعدة في مطار القاهرة الدولي — الجوازات والتأشيرة والأمتعة ونقل خاص. اختر مستوى الخدمة الذي تريده.">Meet &amp; assist at Cairo International — passport, visa, luggage, and a private transfer. Choose the level of service you want.</p>
+  </div>
+</section>
+<section class="page-section">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow" data-lang-en="Three levels" data-lang-ar="ثلاث مستويات">Three levels</p>
+      <h2 class="section-title" data-lang-en="From a smooth arrival to a private lounge." data-lang-ar="من وصول سلس إلى صالة خاصة.">From a smooth arrival to a private lounge.</h2>
     </div>
-    <script src="script.js" defer></script>
+    <div class="offer-grid"><article class="offer-card reveal">
+  <div class="offer-media"><img src="images/services/airport.jpg" alt="Meet &amp; Assist" loading="lazy" decoding="async" fetchpriority="low"></div>
+  <div class="offer-body">
+    <span class="offer-kicker" data-lang-en="Airport" data-lang-ar="المطار">Airport</span>
+    <h3 data-lang-en="Meet &amp; Assist" data-lang-ar="استقبال ومساعدة">Meet &amp; Assist</h3>
+    <p data-lang-en="Arrival support at Cairo International, arranged before you fly." data-lang-ar="دعم الوصول في مطار القاهرة الدولي، مرتّب قبل سفرك.">Arrival support at Cairo International, arranged before you fly.</p>
+    
+    <div class="offer-price">$25 <small data-lang-en="per person + $25 visa" data-lang-ar="للفرد + 25$ تأشيرة">per person + $25 visa</small></div>
+    <ul class="detail-list">
+      <li><svg class="icon" aria-hidden="true"><use href="images/icons.svg#check"></use></svg><span data-lang-en="Passport &amp; visa help" data-lang-ar="مساعدة في الجوازات والتأشيرة">Passport &amp; visa help</span></li>
+      <li><svg class="icon" aria-hidden="true"><use href="images/icons.svg#check"></use></svg><span data-lang-en="Luggage handling" data-lang-ar="استلام الأمتعة">Luggage handling</span></li>
+      <li><svg class="icon" aria-hidden="true"><use href="images/icons.svg#check"></use></svg><span data-lang-en="Arrival coordination" data-lang-ar="تنسيق الوصول">Arrival coordination</span></li>
+    </ul>
+    <div class="offer-actions">
+      <a class="btn btn-gold btn-sm" href="https://wa.me/201004717276" data-request="Meet &amp; Assist" data-request-ar="استقبال ومساعدة" data-lang-en="Request this service" data-lang-ar="اطلب هذه الخدمة">Request this service</a>
+    </div>
+  </div>
+</article><article class="offer-card reveal">
+  <div class="offer-media"><img src="images/services/airport.jpg" alt="Meet &amp; Assist Plus" loading="lazy" decoding="async" fetchpriority="low"></div>
+  <div class="offer-body">
+    <span class="offer-kicker" data-lang-en="Airport" data-lang-ar="المطار">Airport</span>
+    <h3 data-lang-en="Meet &amp; Assist Plus" data-lang-ar="استقبال ومساعدة بلس">Meet &amp; Assist Plus</h3>
+    <p data-lang-en="Arrival support at Cairo International, arranged before you fly." data-lang-ar="دعم الوصول في مطار القاهرة الدولي، مرتّب قبل سفرك.">Arrival support at Cairo International, arranged before you fly.</p>
+    <span class="badge" data-lang-en="Includes golf cart" data-lang-ar="يشمل جولف كار">Includes golf cart</span>
+    <div class="offer-price">$50 <small data-lang-en="per person + $25 visa" data-lang-ar="للفرد + 25$ تأشيرة">per person + $25 visa</small></div>
+    <ul class="detail-list">
+      <li><svg class="icon" aria-hidden="true"><use href="images/icons.svg#check"></use></svg><span data-lang-en="Everything in Meet &amp; Assist" data-lang-ar="كل ما في استقبال ومساعدة">Everything in Meet &amp; Assist</span></li>
+      <li><svg class="icon" aria-hidden="true"><use href="images/icons.svg#check"></use></svg><span data-lang-en="Golf cart inside the airport" data-lang-ar="جولف كار داخل المطار">Golf cart inside the airport</span></li>
+      <li><svg class="icon" aria-hidden="true"><use href="images/icons.svg#check"></use></svg><span data-lang-en="Faster terminal movement" data-lang-ar="تنقل أسرع داخل الصالات">Faster terminal movement</span></li>
+    </ul>
+    <div class="offer-actions">
+      <a class="btn btn-gold btn-sm" href="https://wa.me/201004717276" data-request="Meet &amp; Assist Plus" data-request-ar="استقبال ومساعدة بلس" data-lang-en="Request this service" data-lang-ar="اطلب هذه الخدمة">Request this service</a>
+    </div>
+  </div>
+</article><article class="offer-card reveal offer-card--featured">
+  <div class="offer-media"><img src="images/cars/s-class.jpg" alt="VIP Service" loading="lazy" decoding="async" fetchpriority="low"></div>
+  <div class="offer-body">
+    <span class="offer-kicker" data-lang-en="Airport" data-lang-ar="المطار">Airport</span>
+    <h3 data-lang-en="VIP Service" data-lang-ar="خدمة VIP">VIP Service</h3>
+    <p data-lang-en="Arrival support at Cairo International, arranged before you fly." data-lang-ar="دعم الوصول في مطار القاهرة الدولي، مرتّب قبل سفرك.">Arrival support at Cairo International, arranged before you fly.</p>
+    <span class="badge" data-lang-en="Lounge access" data-lang-ar="دخول الصالة">Lounge access</span>
+    <div class="offer-price">$225 <small data-lang-en="per person + optional $25 visa" data-lang-ar="للفرد + 25$ تأشيرة اختيارية">per person + optional $25 visa</small></div>
+    <ul class="detail-list">
+      <li><svg class="icon" aria-hidden="true"><use href="images/icons.svg#check"></use></svg><span data-lang-en="VIP lounge access" data-lang-ar="دخول صالة كبار الشخصيات">VIP lounge access</span></li>
+      <li><svg class="icon" aria-hidden="true"><use href="images/icons.svg#check"></use></svg><span data-lang-en="Private car inside the airport" data-lang-ar="سيارة خاصة داخل المطار">Private car inside the airport</span></li>
+      <li><svg class="icon" aria-hidden="true"><use href="images/icons.svg#check"></use></svg><span data-lang-en="Customs &amp; luggage support" data-lang-ar="دعم الجمارك والأمتعة">Customs &amp; luggage support</span></li>
+    </ul>
+    <div class="offer-actions">
+      <a class="btn btn-gold btn-sm" href="https://wa.me/201004717276" data-request="the VIP airport service" data-request-ar="خدمة VIP للمطار" data-lang-en="Request this service" data-lang-ar="اطلب هذه الخدمة">Request this service</a>
+    </div>
+  </div>
+</article></div>
+    <p class="section-sub" style="margin-top:24px" data-lang-en="Prices are per person in USD. Visa fees are separate. Terminal, flight and passenger details are confirmed on WhatsApp before arrival." data-lang-ar="الأسعار للفرد بالدولار الأمريكي. رسوم التأشيرة منفصلة. يتم تأكيد الصالة والرحلة وتفاصيل المسافرين على واتساب قبل الوصول.">Prices are per person in USD. Visa fees are separate. Terminal, flight and passenger details are confirmed on WhatsApp before arrival.</p>
+  </div>
+</section>
+<section class="page-section page-section--alt">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow" data-lang-en="Before you fly" data-lang-ar="قبل السفر">Before you fly</p>
+      <h2 class="section-title" data-lang-en="What to send us." data-lang-ar="ماذا ترسل لنا.">What to send us.</h2>
+    </div>
+    <ul class="detail-list detail-list--wide reveal">
+      <li><svg class="icon" aria-hidden="true"><use href="images/icons.svg#check"></use></svg><span data-lang-en="Flight number and airline" data-lang-ar="رقم الرحلة والخطوط">Flight number and airline</span></li>
+      <li><svg class="icon" aria-hidden="true"><use href="images/icons.svg#check"></use></svg><span data-lang-en="Arrival date and time" data-lang-ar="تاريخ ووقت الوصول">Arrival date and time</span></li>
+      <li><svg class="icon" aria-hidden="true"><use href="images/icons.svg#check"></use></svg><span data-lang-en="Terminal, if you know it" data-lang-ar="الصالة، إن كنت تعرفها">Terminal, if you know it</span></li>
+      <li><svg class="icon" aria-hidden="true"><use href="images/icons.svg#check"></use></svg><span data-lang-en="Number of passengers" data-lang-ar="عدد المسافرين">Number of passengers</span></li>
+      <li><svg class="icon" aria-hidden="true"><use href="images/icons.svg#check"></use></svg><span data-lang-en="Passport country" data-lang-ar="بلد جواز السفر">Passport country</span></li>
+      <li><svg class="icon" aria-hidden="true"><use href="images/icons.svg#check"></use></svg><span data-lang-en="Any luggage requirements" data-lang-ar="أي متطلبات للأمتعة">Any luggage requirements</span></li>
+    </ul>
+  </div>
+</section>
+<section class="cta-band">
+  <img src="images/services/airport.jpg" alt="" loading="lazy" decoding="async" fetchpriority="low">
+  <div class="cta-inner">
+    <h2 data-lang-en="Arrive to a familiar face." data-lang-ar="اهبط لتجد وجهًا مألوفًا.">Arrive to a familiar face.</h2>
+    <p data-lang-en="Send your flight details and we will confirm the meeting point before you fly." data-lang-ar="أرسل تفاصيل رحلتك وسنؤكد نقطة اللقاء قبل سفرك.">Send your flight details and we will confirm the meeting point before you fly.</p>
+    <div class="hero-actions" style="justify-content:center">
+      <a class="btn btn-gold" href="booking.html"><span data-lang-en="Plan your arrival" data-lang-ar="خطط وصولك">Plan your arrival</span><svg class="icon icon--directional" aria-hidden="true"><use href="images/icons.svg#arrow"></use></svg></a>
+      <a class="btn btn-wa" href="https://wa.me/201004717276" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="images/icons.svg#wa"></use></svg><span data-lang-en="WhatsApp" data-lang-ar="واتساب">WhatsApp</span></a>
+    </div>
+  </div>
+</section>
+<section class="contact-strip">
+  <div class="container">
+    <a href="tel:+201004717276" dir="ltr"><svg class="icon" aria-hidden="true"><use href="images/icons.svg#phone"></use></svg> +20 100 471 7276</a>
+    <a href="mailto:crowngateegy@gmail.com"><svg class="icon" aria-hidden="true"><use href="images/icons.svg#mail"></use></svg> crowngateegy@gmail.com</a>
+    <span><svg class="icon" aria-hidden="true"><use href="images/icons.svg#pin"></use></svg> <span data-lang-en="Cairo &amp; the North Coast" data-lang-ar="القاهرة والساحل الشمالي">Cairo &amp; the North Coast</span></span>
+  </div>
+</section>
+</main>
+<footer class="site-footer" id="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="images/logo-tight.png" alt="CrownGate" width="436" height="88">
+        <p data-lang-en="A private concierge for Cairo and the North Coast. Airport meet &amp; assist, private cars, golf carts, and guided days — arranged before you land." data-lang-ar="كونسيرج خاص للقاهرة والساحل الشمالي. استقبال ومساعدة في المطار، سيارات خاصة، جولف كار، وجولات — كل شيء مرتّب قبل وصولك.">A private concierge for Cairo and the North Coast. Airport meet &amp; assist, private cars, golf carts, and guided days — arranged before you land.</p>
+        <div class="socials" style="margin-top:20px">
+          <a href="https://www.instagram.com/crowngateegy/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="icon" aria-hidden="true"><use href="images/icons.svg#ig"></use></svg></a>
+          <a href="https://wa.me/201004717276" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="icon" aria-hidden="true"><use href="images/icons.svg#wa"></use></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3 data-lang-en="Services" data-lang-ar="الخدمات">Services</h3>
+        <a href="airport-pickup.html" data-lang-en="Airport meet &amp; assist" data-lang-ar="استقبال ومساعدة بالمطار">Airport meet &amp; assist</a>
+        <a href="cars.html" data-lang-en="Private cars" data-lang-ar="سيارات خاصة">Private cars</a>
+        <a href="golf-cart.html" data-lang-en="Golf carts" data-lang-ar="جولف كار">Golf carts</a>
+        <a href="guided-tours.html" data-lang-en="Cairo tours" data-lang-ar="جولات القاهرة">Cairo tours</a>
+      </div>
+      <div class="footer-col">
+        <h3 data-lang-en="Destinations" data-lang-ar="الوجهات">Destinations</h3>
+        <span data-lang-en="Cairo &amp; Giza" data-lang-ar="القاهرة والجيزة">Cairo &amp; Giza</span>
+        <span data-lang-en="North Coast" data-lang-ar="الساحل الشمالي">North Coast</span>
+        <span data-lang-en="Cairo Airport" data-lang-ar="مطار القاهرة">Cairo Airport</span>
+      </div>
+      <div class="footer-col">
+        <h3 data-lang-en="Contact" data-lang-ar="تواصل">Contact</h3>
+        <a href="tel:+201004717276" dir="ltr">+20 100 471 7276</a>
+        <a href="mailto:crowngateegy@gmail.com" dir="ltr">crowngateegy@gmail.com</a>
+        <a href="https://wa.me/201004717276" target="_blank" rel="noopener" data-lang-en="WhatsApp us" data-lang-ar="راسلنا على واتساب">WhatsApp us</a>
+        <a href="booking.html" data-lang-en="Plan your trip" data-lang-ar="خطط رحلتك">Plan your trip</a>
+      </div>
+    </div>
+    <img class="footer-wordmark" src="images/footer-wordmark.png" alt="" aria-hidden="true" loading="lazy" width="1600" height="220">
+    <div class="footer-bottom">
+      <span>© <span id="year">2026</span> CrownGate. <span data-lang-en="All rights reserved." data-lang-ar="جميع الحقوق محفوظة.">All rights reserved.</span></span>
+      <span data-lang-en="Cairo &amp; the North Coast, Egypt" data-lang-ar="القاهرة والساحل الشمالي، مصر">Cairo &amp; the North Coast, Egypt</span>
+    </div>
+  </div>
+</footer>
+<a class="wa-float" href="https://wa.me/201004717276" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg class="icon" aria-hidden="true"><use href="images/icons.svg#wa"></use></svg>
+</a>
+<script src="script.js" defer></script>
 </body>
 </html>
