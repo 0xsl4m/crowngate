@@ -1,6 +1,6 @@
 # CrownGate — Master Plan & Checkpoints
 
-Status: **Phases 0–7 complete · Lighthouse: 84 performance / 100 accessibility / 100 best practices / 100 SEO**
+Status: **Live on Vercel (commit 5ed0183) · Lighthouse live: 87 performance / 100 accessibility / 100 best practices / 100 SEO**
 Started: 2026-10-24
 Design system: `DESIGN.md`
 
@@ -106,7 +106,7 @@ Legend: `[ ]` not started · `[~]` in progress · `[x]` done & verified
 - [x] Hero preload; width/height on hero and logo; CSS aspect ratios for cards
 - [x] Lazy loading below the fold; below-fold images deprioritised with `fetchpriority="low"`
 - [x] Removed `background-attachment: fixed`; removed Font Awesome
-- [x] Lighthouse mobile run: **Performance 84 · Accessibility 100 · Best Practices 100 · SEO 100**
+- [x] Lighthouse mobile run — live: **87 / 100 / 100 / 100** · local: 84 / 100 / 100 / 100
 - [x] Keyboard path, focus-visible, gallery focus trap/ESC, alt text
 - [x] Browser QA at 390 / 768 / 1024 / 1440 in EN and AR (no horizontal overflow)
 - [x] `avoid-ai-design` re-scan: **0 findings**
@@ -141,11 +141,13 @@ Legend: `[ ]` not started · `[~]` in progress · `[x]` done & verified
 - Language now updates `<html lang/dir>` and never touches the URL.
 - Booking and quick-request flows verified end-to-end in English and Arabic.
 - `avoid-ai-design`: 0 findings across the active pages, CSS and JS.
+- Committed as `5ed0183`, pushed to `0xsl4m/crowngate`, deployed to Vercel; all live pages and assets return 200, and `hotels.html` / `chalets.html` return 404 with the custom page.
+- Live Lighthouse: **87 performance / 100 accessibility / 100 best practices / 100 SEO**.
 
 ## Known follow-ups
 
 - Optional performance push to 90+: critical CSS, minify CSS/JS/HTML, or self-host fonts.
-- Add real business proof, prices and policies before launch.
+- Add real business proof, prices and policies before promoting the site or running paid traffic.
 - Consider a custom domain and update canonicals across all pages.
 
 ---
@@ -156,6 +158,7 @@ Legend: `[ ]` not started · `[~]` in progress · `[x]` done & verified
 |---|---|---|
 | 2026-10-24 | 0 | Brand direction + plan created |
 | 2026-10-24 | — | Hotels/chalets removed from all live surfaces; airport retained |
-| 2026-10-24 | 1–6 | Full redesign and rebuild shipped locally; scanner clean |
-| 2026-10-24 | 7 | Manual responsive/functional QA complete; Lighthouse 84/100/100/100 |
-| 2026-10-24 | — | Deleted `hotels.html` and `chalets.html`; ready to commit/deploy |
+| 2026-10-24 | 1–6 | Full redesign and rebuild completed; scanner clean |
+| 2026-10-24 | 7 | Manual responsive/functional QA complete; local Lighthouse 84/100/100/100 |
+| 2026-10-24 | — | Deleted `hotels.html` and `chalets.html` |
+| 2026-10-24 | — | Committed 5ed0183, pushed to GitHub, deployed to Vercel; live 87/100/100/100 |
